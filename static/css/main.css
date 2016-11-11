@@ -28,7 +28,7 @@
 }
 .row-details {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
     color: #fff;
 }
 p.info {
