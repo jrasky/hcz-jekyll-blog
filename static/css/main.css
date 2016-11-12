@@ -33,6 +33,7 @@
 }
 p.info {
     color: #fff;
+    min-height: 20px;
 }
 p.info a {
     color: #fff;
@@ -175,4 +176,7 @@ footer {
 }
 .PageNavigation {
     margin-bottom: 40px;
+}
+.posts .list-group-item-heading {
+    max-width: 80%;
 }

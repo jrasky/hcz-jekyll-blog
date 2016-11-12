@@ -16,3 +16,6 @@ per_page: 20
 paginate_path: "/page:num/"
 markdown: kramdown
 gems: [jekyll-paginate, jekyll-gist]
+
+host: 0.0.0.0
+port: 4000

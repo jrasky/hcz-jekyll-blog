@@ -24,6 +24,7 @@
     {
         "text": "Github",
         "url": "https://github.com/jrasky",
-        "icon": "fa-github"
+        "icon": "fa-github",
+        "target": _blank
     }
 ]

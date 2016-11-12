@@ -42,6 +42,10 @@ $text_size: 13px;
 
     .project-inner > a { display: block; }
 
+    .project-content {
+        min-height: 185px;
+    }
+
     .project-img {
         height: 200px;
         display: block;
