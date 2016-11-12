@@ -8,6 +8,12 @@ about: Software Engineer
 baseurl: ""
 url: "http://rasky.co/"
 
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "LICENSE"
+  - "README.md"
+
 enableTags: true
 tagarray: []
 
