@@ -188,3 +188,6 @@ footer {
 .posts .list-group {
     margin-bottom: 0;
 }
+.page-content p:last-child {
+    margin-bottom: 0;
+}
