@@ -185,3 +185,6 @@ footer {
     flex-wrap: wrap;
     align-items: stretch;
 }
+.posts .list-group {
+    margin-bottom: 0;
+}
