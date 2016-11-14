@@ -1,0 +1,28 @@
+{
+  "name": "jrasky.github.io",
+  "homepage": "https://rasky.co/",
+  "authors": [
+    "Jerome Rasky <jyrome.112@gmail.com>"
+  ],
+  "description": "My personal blog",
+  "main": "index.html",
+  "keywords": [
+    "blog",
+    "personal",
+    "hacker"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.7.0",
+    "paper-button": "^1.0.14",
+    "paper-menu": "^1.2.2"
+  }
+}

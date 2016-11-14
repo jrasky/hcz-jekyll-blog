@@ -180,3 +180,8 @@ footer {
 .posts .list-group-item-heading {
     margin-right: 80px;
 }
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}

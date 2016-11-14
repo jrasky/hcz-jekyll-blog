@@ -7,26 +7,30 @@ layout: default
     {{ content }}
 
     <div class="projects row">
-    {% for i in site.data.projects %}
-    <div class="project-item col-md-4 col-sm-6 col-xs-12" data-tags='{{ i.tags | jsonify | downcase }}'>
+      {% for i in site.data.projects %}
+      <div class="project-item col-md-4 col-sm-6 col-xs-12" data-tags='{{ i.tags | jsonify | downcase }}'>
     	<div class="well project-outer">
-    		<div class="project-inner">
+    	  <div class="project-inner">
+            <div class="project-upper">
+              <div class="project-header">
                 {% if i.url %} <a href="{{ i.url }}"> {% endif %}
-    			<h3 class="project-headlines">{{ i.name }}</h3>
-    			{% if i.url %} </a> {% endif %}
-    			<div class="project-content">
-    				{{ i.description }}
-    			</div>
-    			<div class="project-footer"> 
-    				{% if i.url %} 
-    				<a href="{{ i.url }}" class="btn btn-info btn-raised btn-sm project-link">View</a>
-    				{% endif %}
-    				<span class="project-timeline">{{ i.date }}</span>
-    			</div>
+    		      <h3 class="project-title">{{ i.name }}</h3>
+    		      {% if i.url %} </a> {% endif %}
+                <span class="project-timeline">{{ i.date }}</span>
+              </div>
+    		  <div class="project-content">
+    		    {{ i.description }}
+    		  </div>
+            </div>
+    		<div class="project-footer"> 
+    		  {% if i.url %} 
+    		  <a href="{{ i.url }}"><paper-button class="project-button">View</paper-button></a>
+    		  {% endif %}
     		</div>
+    	  </div>
     	</div>
-        </div>
-    {% endfor %}
+      </div>
+      {% endfor %}
     </div>
   </div>
 

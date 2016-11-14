@@ -31,20 +31,38 @@ $text_size: 13px;
 .project-outer {
 
     vertical-align: top;
+    height: calc(100% - 20px);
 
-    .project-headlines {
-
-        @include margins(5px 0);
+    .project-header {
+        margin-bottom: 5px;
         @include borderbtm( #EEE );
-        font-size: $heading_size;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
 
+        .project-title {
+            display: inline-block;
+            font-size: $heading_size;
+            margin-top: 0;
+        }
+
+        .project-timeline {
+            display: inline-block;
+            font-size: $text_size;
+            font-style: italic;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+    }
+
+    .project-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .project-inner > a { display: block; }
-
-    .project-content {
-        min-height: 185px;
-    }
 
     .project-img {
         height: 200px;
@@ -62,27 +80,17 @@ $text_size: 13px;
     }
 
     .project-footer {
-
-        clear: both;
         display: inline-block;
-        width: 100%;
+        margin-top: 10px;
 
-        .project-link {
-            display: inline-block;
-            position: relative;
-            float: left;
+        paper-button {
+            background-color: #03a9f4;
+            color: rgba(255, 255, 255, 0.95);
+            margin-left: 0;
         }
 
-        .project-timeline {
-
-            display: inline-block;
-            position: relative;
-            float: right;
-            font-size: $text_size;
-            font-style: italic;
-            vertical-align: middle;
-            @include margins(10px 0);
-            @include pad(5px 0);
+        a:hover {
+            text-decoration: none;
         }
     }
 }

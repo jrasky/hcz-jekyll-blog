@@ -1,3 +1,4 @@
 _site/
 *~
 /.tramp_history
+/bower_components/
