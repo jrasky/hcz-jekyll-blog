@@ -4,6 +4,8 @@ author: Jerome Rasky
 logo: /static/img/avatar.jpg
 github: https://github.com/jrasky
 about: Software Engineer
+source: src
+destination: src/_site
 
 baseurl: ""
 url: "http://rasky.co/"
@@ -12,6 +14,8 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "README.md"
+  - "node_modules"
+  - "tasks"
 
 enableTags: true
 tagarray: []
