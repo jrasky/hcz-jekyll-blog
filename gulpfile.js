@@ -24,6 +24,9 @@ var historyApiFallback = require('connect-history-api-fallback');
 var packageJson = require('./package.json');
 var crypto = require('crypto');
 var ensureFiles = require('./tasks/ensure-files.js');
+var Vulcanize = require('vulcanize');
+var through = require('through2');
+var gutil = require('gulp-util');
 
 var spawn = require('child_process').spawn;
 var argv = require('yargs').argv;
@@ -61,6 +64,35 @@ var src = function(subpath) {
 var dist = function(subpath) {
     return !subpath ? DIST : path.join(DIST, subpath);
 };
+
+var doVulcanize = function (opts) {
+    opts = opts || {};
+
+	return through.obj(function (file, enc, cb) {
+		if (file.isNull()) {
+            cb(null, file);
+			return;
+		}
+
+		if (file.isStream()) {
+			cb(new gutil.PluginError('gulp-vulcanize', 'Streaming not supported'));
+			return;
+		}
+
+        // vulcanize expects target path to be relative to abspath
+        let filePath = opts.abspath ? path.relative(opts.abspath, file.path) : file.path;
+
+		(new Vulcanize(opts)).process(filePath, function (err, inlinedHtml) {
+			if (err) {
+				cb(new gutil.PluginError('gulp-vulcanize', err, {fileName: filePath}));
+				return;
+			}
+
+			file.contents = new Buffer(inlinedHtml);
+			cb(null, file);
+		});
+	});
+}
 
 var styleTask = function(src, dest) {
     return gulp.src(src)
@@ -179,22 +211,15 @@ gulp.task('images', function() {
 
 // Copy all files at the root level (app)
 gulp.task('copy', function() {
-    var app = gulp.src([
+    return gulp.src([
         src('*'),
         notsrc('bower_components'),
         notsrc('cache-config.json'),
         notsrc('.DS_Store')
     ], {
         dot: true
-    }).pipe(gulp.dest(dist()));
-
-    // Copy over only the bower_components we need
-    // These are things which cannot be vulcanized
-    var bower = gulp.src([
-        src('bower_components/{webcomponentsjs,platinum-sw,sw-toolbox,promise-polyfill}/**/*')
-    ]).pipe(gulp.dest(dist('bower_components')));
-
-    return merge(app, bower)
+    })
+		.pipe(gulp.dest(dist()))
         .pipe($.size({
             title: 'copy'
         }));
@@ -218,13 +243,13 @@ gulp.task('html', function() {
 });
 
 // Vulcanize granular configuration
-gulp.task('vulcanize', function() {
-    return gulp.src('index.html')
-        .pipe($.vulcanize({
+gulp.task('imports', function() {
+    return gulp.src(src('imports.html'))
+        .pipe(doVulcanize({
             stripComments: true,
             inlineCss: true,
             inlineScripts: true,
-            abspath: 'src'
+            abspath: src()
         }))
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -232,8 +257,8 @@ gulp.task('vulcanize', function() {
             minifyJS: true,
             minifyCSS: true
         }))
-        .pipe(gulp.dest(dist('')))
-        .pipe($.size({title: 'vulcanize'}));
+        .pipe(gulp.dest(dist()))
+        .pipe($.size({title: 'imports'}));
 });
 
 // Generate config data for the <sw-precache-cache> element.
@@ -251,9 +276,8 @@ gulp.task('cache-config', function(callback) {
     };
 
     glob([
-        'index.html',
         './',
-        'bower_components/webcomponentsjs/webcomponents-lite.min.js',
+		'./imports.html',
         'static/**/*.*'],
          {cwd: dir}, function(error, files) {
              if (error) {
@@ -339,7 +363,9 @@ gulp.task('serve:dist', ['default'], function() {
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        server: dist(),
+        server: {
+			baseDir: dist()
+		},
         middleware: [historyApiFallback()]
     });
 });
@@ -360,7 +386,7 @@ gulp.task('default', ['clean'], function(cb) {
         'jekyllbuild',
         ['ensureFiles', 'copy', 'styles'],
         ['images', 'fonts', 'scripts', 'html'], //, 'html'
-        'vulcanize', // 'cache-config',
+        'imports', // 'cache-config',
         cb);
 });
 
