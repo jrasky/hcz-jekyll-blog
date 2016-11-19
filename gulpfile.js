@@ -244,7 +244,7 @@ gulp.task('html', function() {
 
 // Vulcanize granular configuration
 gulp.task('imports', function() {
-    return gulp.src(src('imports.html'))
+    return gulp.src(src('static/imports.html'))
         .pipe(doVulcanize({
             stripComments: true,
             inlineCss: true,
@@ -257,7 +257,7 @@ gulp.task('imports', function() {
             minifyJS: true,
             minifyCSS: true
         }))
-        .pipe(gulp.dest(dist()))
+        .pipe(gulp.dest(dist('static')))
         .pipe($.size({title: 'imports'}));
 });
 
@@ -275,10 +275,7 @@ gulp.task('cache-config', function(callback) {
         disabled: false
     };
 
-    glob([
-        './',
-		'./imports.html',
-        'static/**/*.*'],
+    glob(['static/**/*.*'],
          {cwd: dir}, function(error, files) {
              if (error) {
                  callback(error);
