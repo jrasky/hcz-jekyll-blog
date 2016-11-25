@@ -175,7 +175,9 @@ footer {
     background: rgba(89, 148, 129, 0.3);
 }
 .PageNavigation {
-    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .posts .list-group-item-heading {
     margin-right: 80px;
