@@ -17,6 +17,9 @@ exclude:
   - "node_modules"
   - "tasks"
 
+include:
+  - ".nojekyll"
+
 enableTags: true
 tagarray: []
 
