@@ -1,0 +1,4 @@
+[submodule "ghpages"]
+	path = ghpages
+	url = git@github.com:jrasky/jrasky.github.io.git
+	branch = master
