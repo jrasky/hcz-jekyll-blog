@@ -4,49 +4,75 @@ title: "Usability is King"
 date: 2016-12-03
 ---
 
-It's interesting to talk with people who are a bit younger than me as they
-follow their path in software development. Watching them develop similar skills
-and habits, and face similar issues to myself is an interesting reflection on my
-own experiences learning about software development. As the people around me go
-through challenges and find solutions, they learn a lot of the same lessons that
-I've learned over the years. I know that saying this at my age might sound
-completely ridiculous, but maybe the interesting thing is that I can already say
-something like that at my age. One of the things I reflect on sometimes is how I
-feel that my knowledge in computer science grows so much each year. The me from
-just a year ago knew so much less than I do now about so many things. This kind
-of learning is the similar to what a lot of my peers go through. Being around
-other people going through similar things that I went through before is a good
-way to identify the specific ways in which my own understanding has grown over
-time.
+In the book _Impro_, Keith Johnstone discusses how he views the world of
+narrative, and especially how he considers the formation of a narrative. In his
+view, a narrative is really much more about structure than content. Structure is
+the most important thing, after which the content just sort of adapts to
+whatever the situation is. In particular, he explores how narratives are really
+about breaking routine. Somebody might be on the routine of walking home, when
+they are whisked away to some magical world, breaking their routine. Over the
+course of the story, more routines are formed and then broken, adding more and
+more layers to the narrative.
 
-One of the most interesting transitions that I went through, and that I feel a
-lot of people go through is when they start to care about usability. There's
-this appearance, at least to me, that young techies have an attraction to deeply
-customized, "cool" looking interfaces. I know that I was all about wobbly,
-transparent windows, desktop cubes, and super customized colors when I was a bit
-younger. Making everything look and work exactly how I want it to is something
-that I find very enticing in other ways, and it's something that I still haven't
-completely gotten rid of. I hope that I don't, either, because there's a kind of
-satisfaction to building software in exactly the way that I want that brings me
-a certain kind of joy. Although building software systems just the way that I
-want them is something that I still enjoy very much, the other ways that I used
-to like having everything exactly the way I want it have been diminished.
+Some of the reviews of Johnstone's novel emphasize how _Impro_ isn't "just a
+book about improvisation," but a book that drives at some more fundamental
+issues and questions in the human psyche and experience. I know that this book
+is really a pop psychology piece, like so many others, but it's tough to really
+deny the appeal of a work of this nature. I think more broadly, the reason that
+people feel this way is that theater is in a way a reflection of our daily
+lives. In particular, improvising is something that we all have to do on a daily
+basis when dealing with other people. What that means is that the problems that
+surface when trying to improvise effectively have a lot in comomn with the
+problems that people have when trying to socialize.
 
-I see this sort of pattern in the other people I'm around too: over time, they
-shift away from the hyper-customized interfaces into ones that are more
-familiar. For me, at least, the biggest consideration now is general usability.
-Instead of caring about having exactly the right icon theme to complement my
-shell, I'm content with simply having everything stock, so long as it works
-well.
+Narratives are a powerful way to interpret the world. It's easy to see human
+activity as centering around the routines that people have. The most important
+episodes in life are then when those routines are broken, and when new ones take
+their place. This is true in many aspects of life, not just in the physical
+routines that people have. There is evidence to show (TODO find this) that
+people like to "try on" various belief systems. These beliefs are kind of like
+mental and emotional routines, thought patterns that people go through as a way
+to parse and deal with the world around them. The same thinking around breaking
+routines then also applies here, except that the routines are of a different
+kind. People are sometimes forced to break their mental routines, and fit
+themselves into something new.
 
-One article I read a while back about this (TODO: maybe find this article and
-link to it) made a point about how Apple was (or at least, used to be) great
+People form their life stories when they break routines. As they do, they find
+new routines, and in time break those, adding more layers to their life stories.
+I've gone through this process many times myself, shifting both in physical and
+mental routines, breaking and forming new ones in the ongoing story of my life.
+
+The people around me go through similar experiences, forming and then breaking
+similar routines. Watching people go through this a great reflection on my own
+progress as a person. I recognize those similar routines that people have, and
+which they then go on to break in similar ways to the ways that I did back when
+I went through what they were going through.
+
+One of the more interesting routines that I had and then broke ended with me
+realizing the importance of usability. The younger people around me sometimes
+have the routine of deeply customizing their user interfaces, either in looks or
+in functionality. Other times they have the routine of liking user interfaces
+that are purely text-driven, or have some basis in the "unix philosophy." I know
+that I liked these sorts of things when I was younger, as did a lot of the
+communities that I frequented when I was younger.
+
+One [comment](https://news.ycombinator.com/item?id=13009461) I read a while back
+about this made a point about how Apple was (or at least, used to be) great
 because it was a company with Opinions. These capital-O Opinions, over
 lower-case o opinions, mean that Apple had certain ideas about they wanted you
 to use their products, and they got upset if you ventured too far outside that.
 In return, they made sure that everything worked very well within that set of
 Opinions. The end-result of this was that everything "just worked," because
 everything was predicated on the same set of Opinions.
+
+In contrast, a lot of the interfaces that younger people around me sometimes
+like lack these kinds of capital-O Opinions. Instead, they have weaker
+opinions, which they don't really enforce so much as suggest. In many instances
+this is for the better, because the opinions that they do have do not work very
+well to improve usability. Rather than choosing the products and tools that
+provide the best experience out of the box, some of the people around me choose
+tools and platforms that can be reshaped into whatever user interface they find
+most appealing.
 
 I think that a big part of consumer technology, versus enterprise or developer
 technology, is that of Opinions over opinions. More niche use cases, like
