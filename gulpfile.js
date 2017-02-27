@@ -90,20 +90,32 @@ function optimizeHtmlTask(src, dest) {
 };
 
 // Optimize images
-gulp.task('images', function() {
+gulp.task('images', ['copy'], function() {
     return imageOptimizeTask(src('static/img/**/*'), dist('static/img'));
 });
 
-// Copy all files at the root level (app)
-gulp.task('copy', function() {
+// Copy select bower scripts to the static directory
+gulp.task('static', function() {
     return gulp.src([
-        src('*'),
+        'src/bower_components/webcomponentsjs/webcomponents-lite.min.js'
+    ], {
+        dot: true
+    })
+        .pipe(gulp.dest('src/static/js'))
+        .pipe($.size({
+            title: 'static'
+        }));
+});
+
+// Copy all files at the root level (app)
+gulp.task('copy', ['jekyllbuild'], function() {
+    return gulp.src([
+        src('**'),
         notsrc('bower_components'),
         notsrc('cache-config.json'),
         notsrc('.DS_Store')
     ], {
-        dot: true,
-		nodir: true
+        dot: true
     })
 		.pipe(gulp.dest(dist()))
         .pipe($.size({
@@ -112,7 +124,7 @@ gulp.task('copy', function() {
 });
 
 // Copy web fonts to dist
-gulp.task('fonts', function() {
+gulp.task('fonts', ['copy'], function() {
     return gulp.src([src('static/fonts/**')])
         .pipe(gulp.dest(dist('static/fonts')))
         .pipe($.size({
@@ -121,7 +133,7 @@ gulp.task('fonts', function() {
 });
 
 // Scan your HTML for assets & optimize them
-gulp.task('html', function() {
+gulp.task('html', ['copy'], function() {
     return optimizeHtmlTask(
         // TODO: Changed extension from HTML because JS wasn't getting copied over.
         [src('**/*.html'), notsrc('bower_components/**/*.html'), notsrc('static/**/*.html')],
@@ -129,7 +141,7 @@ gulp.task('html', function() {
 });
 
 // Vulcanize granular configuration
-gulp.task('imports', function() {
+gulp.task('imports', ['images', 'fonts', 'html'], function() {
     return gulp.src(src('static/imports.html'))
         .pipe(doVulcanize({
             stripComments: true,
@@ -152,7 +164,7 @@ gulp.task('clean', function() {
     return del([src(), dist()]);
 });
 
-gulp.task('serve', function(done) {
+gulp.task('serve', ['static'], function(done) {
 	const args = ['exec', 'jekyll', 'serve'];
 
 	if (argv.port) {
@@ -195,7 +207,7 @@ gulp.task('serve:dist', ['default'], function() {
     });
 });
 
-gulp.task('jekyllbuild', function(done) {
+gulp.task('jekyllbuild', ['static'], function(done) {
     const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit' })
         .on('close', done);
 
@@ -208,10 +220,5 @@ gulp.task('jekyllbuild', function(done) {
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function(cb) {
-    runSequence(
-        'jekyllbuild',
-        'copy',
-        ['images', 'fonts', 'html'],
-        'imports',
-        cb);
+    runSequence('imports', cb);
 });

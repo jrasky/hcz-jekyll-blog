@@ -4,6 +4,54 @@ title: "Usability is King"
 date: 2016-12-03
 ---
 
+The book _Impro_ by Keith Johnstone is, according to the cover, a book on
+improvisation in theater. Much like the saying goes, there's much more going on
+once you dive inside. Johnstone himself extends some of his philosophies out
+beyond the world of improvisation, in part because so much of life is really
+about improvisation. As much as _Impro_ is a mixture pop psychology and
+technical work about theater, it's power--at least to me--as a source of
+inspiration is undeniable. The most powerful part for me was certainly the parts
+about masks. Johnstone places an almost religious importance upon them (TODO
+find a quote about this), spending quite a lot of time relating the rituals and
+experiences of various traditions and cults surrounding masks. Masks, in those
+traditions, allow gods or spirits to inhabit the wearer. Johnstone treats this
+like different personalities, which are unlocked by wearing the mask.
+
+Like many other aspects of my personality, I'm not entirely sure what draws me
+so much to these kinds of discussions, but I think in the end I just can't
+resist seeing a bit of magic in the world. Johnstone elaborates a great length
+on the process that actors undergo to learn to play a mask, and how over time an
+actor can draw from the skills of the mask into their own acting. In a way, I
+think this process mirrors some of the processes that I've undergone as a
+person. As I look back through past years, I'm always astonished at how much
+I've changed in so short a time. Watching people around me go through a lot of
+the same changes that I've gone through over time is like watching myself go
+through it again, like watching new actors learning the same masks again and
+again.
+
+_Impro_ also focuses on narratives, and how they form the basis for the stories
+that we tell about ourselves and each other. In particular, Johnstone emphasizes
+how the structure of a narrative is what makes it interesting, and not
+particularly its content. He describes its structure as being routines that are
+introduced, and then broken, each time adding a layer to the narrative. Masks
+and narratives work together, in that a mask's personality will inform the
+routines that it has. These in turn mean they also inform the breaks in those
+routines, and how those breaks are dealt with. Stories, over time, involve
+different characters with different personalities, each with their own routines
+and breaks that throw them up into the air. Different actors can don different
+masks, over time living different experiences and narratives.
+
+This might all seem very abstract. After all, what do masks have to do with
+everyday life? What I would suggest--somewhat in line with what Johnstone
+suggests--is that masks are really just catalysts to the personalities that
+somebody has inside them already. Different actors can use different masks, much
+like how different people have different personalities. In real life, the masks
+aren't there, but the effects certainly are. People go through life at times
+trying on different masks, and with them coming into new narratives, layered
+with their own routines that form and are broken. Some people have certain
+personalities, and others don't just like how actors can only use some masks.
+Much like their counterparts on the stage, 
+
 In the book _Impro_, Keith Johnstone discusses how he views the world of
 narrative, and especially how he considers the formation of a narrative. In his
 view, a narrative is really much more about structure than content. Structure is
