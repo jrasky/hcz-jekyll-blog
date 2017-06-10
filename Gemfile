@@ -7,4 +7,5 @@ group :jekyll_plugins do
   gem 'jekyll-watch'
   gem 'kramdown'
   gem 'rouge'
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end

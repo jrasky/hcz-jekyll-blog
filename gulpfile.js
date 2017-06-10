@@ -172,7 +172,7 @@ gulp.task('serve', ['static'], function(done) {
 	}
 
 	const jekyll = spawn('bundle', args, {
-		stdio: 'inherit'
+		stdio: 'inherit', shell: true
 	}).on('close', done);
 
     jekyll.on('exit', function(code) {
@@ -208,7 +208,7 @@ gulp.task('serve:dist', ['default'], function() {
 });
 
 gulp.task('jekyllbuild', ['static'], function(done) {
-    const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit' })
+    const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', shell: true })
         .on('close', done);
 
     jekyll.on('exit', function(code) {
