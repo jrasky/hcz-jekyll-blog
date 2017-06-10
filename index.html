@@ -47,7 +47,10 @@
         
 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-	<link rel="import" href="/static/imports.html">
+    <!-- Polyfill for html imports -->
+    <script type="text/javascript" src="/static/js/webcomponents-lite.min.js"></script>
+    <!-- The actual html imports -->
+	  <link rel="import" href="/static/imports.html">
   </head>
 
   <body class="home overflow-hidden">
@@ -149,6 +152,20 @@
       
       
         
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="fa fa-sticky-note"></i>
+        </div>
+        <div class="row-content">
+          <div class="least-content">09 Jun 2017</div>
+          <h4 class="list-group-item-heading"><a href="/2017/06/09/android-performance.html">Android Performance</a></h4>
+
+          <p class="list-group-item-text">Despite their impressive hardware specifications, Android devices have an unfortunate reputation of poor performance. Frames get dropped, launching an application...</p>
+        </div>
+      </div>
+      
+       <div class="list-group-separator"></div>
+      
       <div class="list-group-item">
         <div class="row-action-primary">
           <i class="fa fa-sticky-note"></i>

@@ -5,9 +5,30 @@
     <description>Personal Website</description>
     <link>http://rasky.co//</link>
     <atom:link href="http://rasky.co//sitemap.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Nov 2016 20:13:49 -0800</pubDate>
-    <lastBuildDate>Fri, 25 Nov 2016 20:13:49 -0800</lastBuildDate>
+    <pubDate>Fri, 09 Jun 2017 20:57:36 -0700</pubDate>
+    <lastBuildDate>Fri, 09 Jun 2017 20:57:36 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Android Performance</title>
+        <description>&lt;p&gt;Despite their impressive hardware specifications, Android devices have an unfortunate reputation of poor performance. Frames get dropped, launching an application takes a long time, or the whole device seems to freeze. This kind of unpredictable performance isn’t great. One important factor of any platform is the programming language used. Android is based around Java, a dynamic, garbage-collected language with a hefty runtime and complex features that are tough to optimize. Android’s kernel, Linux, is designed more for servers than smartphones, and amplifies performance issues by making poor use of hardware. The story of Android performance follows the design of the platform, from the Java compiler and runtime to the Linux kernel at the base.&lt;/p&gt;
+
+&lt;p&gt;The Java Virtual Machine on Android was originally designed to be simple, to conform to the resource constraints of the hardware it was running on. Google chose to create a memory-efficient bytecode and an interpreter for their JVM. Over time, hardware improved, and the JVM shifted to become a Just-In-Time compiler. JIT compilers are fast, and avoid complex optimizations. Regardless, compiler overhead meant application startup time became problem. Google tackled this by designing an ahead-of-time compiler to supplement the existing JIT design. By shifting the work of the compiler from application startup to installation, startup time improved without sacrificing performance.&lt;/p&gt;
+
+&lt;p&gt;Garbage collection is about shifting the cost of memory management to reduce latency. First generation hardware limitations required choosing a design for the garbage collector that performed poorly on newer hardware. Applications often had to wait on the garbage collector, at busy times that made this pausing very noticeable. The new JIT design for the JVM improved on these glitches, introducing concurrent garbage collection and compaction. Those and other more complex strategies mean that modern applications rarely pause to wait for garbage collection.&lt;/p&gt;
+
+&lt;p&gt;Between ahead-of-time compilation and improved garbage collection, the new Android JVM accomplishes the important goal of getting out of the way. There are some remaining performance issues, but most are solved. Some applications have worse performance owing to their own design, which will always be the case on any platform.&lt;/p&gt;
+
+&lt;p&gt;The JVM’s design had matured, but issues around latency persisted, especially audio latency. Gaps in audio playback are even more unpleasant than dropped frames, and cause loud pops. Google’s documentation details how the default scheduler in Linux prioritizes threads that have not used processor time recently. This means that despite giving priority to UI and audio threads, other tasks might preempt user-facing ones during periods of high system usage. The solution for audio threads is real-time scheduling, so that they will always run immediately if they are ready.&lt;/p&gt;
+
+&lt;p&gt;Google has recently announced that Android “O” will carry hard limits on background task execution. This will improve the situation considerably, as applications will no longer be as able to impact performance once they aren’t open. Google’s other project, Fuschia, is a complete redesign of the kernel, and represents the more nuclear approach to the performance problem in Android. It will be interesting to see what solutions are in store in the future, and what shape the Android operating system and ecosystem will take.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Jun 2017 00:00:00 -0700</pubDate>
+        <link>http://rasky.co//2017/06/09/android-performance.html</link>
+        <guid isPermaLink="true">http://rasky.co//2017/06/09/android-performance.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Why Concurrency doesn&#39;t Matter</title>
@@ -155,27 +176,43 @@ programming without it.&lt;/p&gt;
     
       <item>
         <title>Working with the Terminal</title>
-        <description>&lt;p&gt;Having done by now a fair bit of work building a terminal application in Linux, I’d like to mention how much the interface matches what I’d like to call “the text box of doom.” There are a few major issues that I have with it, namely&lt;/p&gt;
+        <description>&lt;p&gt;Having done by now a fair bit of work building a terminal application in Linux,
+I’d like to mention how much the interface matches what I’d like to call “the
+text box of doom.” There are a few major issues that I have with it, namely&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;No way to read out the contents of the screen&lt;/p&gt;
 
-    &lt;p&gt;I understand the issue with doing so, but there being no way of getting the contents of the current screen means there is no real way to know what is on there–even if you clear everything and redraw, there might be some quirks with the terminal emulator that cause it to not actually contain what you think it contains.&lt;/p&gt;
+    &lt;p&gt;I understand the issue with doing so, but there being no way of getting the
+ contents of the current screen means there is no real way to know what is on
+ there–even if you clear everything and redraw, there might be some quirks
+ with the terminal emulator that cause it to not actually contain what you
+ think it contains.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;No strict separation of control and text sequences&lt;/p&gt;
 
-    &lt;p&gt;Again, the limitations of the serial connection mean escape characters are really the only way to go when designing control sequences, but it would be nice to not mix them in with the text. I understand the simplicity of having applications just be able to print out contents and read back lines, but given the existence of termios this shouldn’t need to be. Instead, there should be a “high” mode where text is a control sequence.&lt;/p&gt;
+    &lt;p&gt;Again, the limitations of the serial connection mean escape characters are
+ really the only way to go when designing control sequences, but it would be
+ nice to not mix them in with the text. I understand the simplicity of having
+ applications just be able to print out contents and read back lines, but
+ given the existence of termios this shouldn’t need to be. Instead, there
+ should be a “high” mode where text is a control sequence.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Output at the end of the line counts as a newline&lt;/p&gt;
 
-    &lt;p&gt;Ideally, lines should be inputted as that: lines. At least, there should be a way to do so, much like there is a line input method on the other end. Applications shouldn’t have to worry about how long a line is exactly, and instead the terminal should treat each line like a line.&lt;/p&gt;
+    &lt;p&gt;Ideally, lines should be inputted as that: lines. At least, there should be
+ a way to do so, much like there is a line input method on the other end.
+ Applications shouldn’t have to worry about how long a line is exactly, and
+ instead the terminal should treat each line like a line.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The result of all this is a lot of work and redundancy on the part of the application to maintain a correct representation of the state of the display, something which a good API should specifically avoid.&lt;/p&gt;
+&lt;p&gt;The result of all this is a lot of work and redundancy on the part of the
+application to maintain a correct representation of the state of the display,
+something which a good API should specifically avoid.&lt;/p&gt;
 </description>
         <pubDate>Fri, 06 Mar 2015 00:00:00 -0800</pubDate>
         <link>http://rasky.co//2015/03/06/working-with-the-teminal.html</link>

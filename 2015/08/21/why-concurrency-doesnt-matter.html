@@ -54,7 +54,10 @@
         
 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-	<link rel="import" href="/static/imports.html">
+    <!-- Polyfill for html imports -->
+    <script type="text/javascript" src="/static/js/webcomponents-lite.min.js"></script>
+    <!-- The actual html imports -->
+	  <link rel="import" href="/static/imports.html">
   </head>
 
   <body class="home overflow-hidden">
@@ -282,12 +285,17 @@ programming without it.</p>
     
     
 
+    
+    
+
 
 
 <div class="PageNavigation">
   
     <a class="prev" href="/2015/03/09/the-new-macbook.html">&laquo; The New MacBook</a>
   
+  
+    <a class="next" href="/2017/06/09/android-performance.html">Android Performance &raquo;</a>
   
 </div>
 

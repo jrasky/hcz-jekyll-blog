@@ -54,7 +54,10 @@
         
 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-	<link rel="import" href="/static/imports.html">
+    <!-- Polyfill for html imports -->
+    <script type="text/javascript" src="/static/js/webcomponents-lite.min.js"></script>
+    <!-- The actual html imports -->
+	  <link rel="import" href="/static/imports.html">
   </head>
 
   <body class="home overflow-hidden">
@@ -170,6 +173,9 @@
 </article>
 <hr />
 
+
+    
+    
 
     
     
