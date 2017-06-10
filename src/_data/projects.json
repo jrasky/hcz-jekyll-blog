@@ -1,26 +1,32 @@
 [
 	{
 		"name": "BIS 2",
-		"url": "https://github.com/jrasky/bis2.git",
+		"url": "https://github.com/jrasky/bis2",
 		"date": "August 2015",
         "description": "Better search for bash. It's something that I built when I got tired of readline's default search, and wanted something like flx in emacs, but for bash."
 	},
 	{
 		"name": "Wash",
-		"url": "https://github.com/jrasky/wash.git",
+		"url": "https://github.com/jrasky/wash",
 		"date": "December 2014",
         "description": "The whatever shell, is a project that I worked on mainly to learn how to make effective UIs in terminal, and to learn how to use Linux kernel APIs to manage processes and the like."
 	},
 	{
 		"name": "Half2",
-		"url": "https://github.com/jrasky/half2.git",
+		"url": "https://github.com/jrasky/half2",
 		"date": "May 2015",
         "description": "A b-tree implementation that started out as version control system. Learned how to make effective UIs in terminal, and to learn how to use Linux kernel APIs to manage processes and manage system resources."
 	},
     {
         "name": "Kernel",
-        "url": "https://github.com/jrasky/kernel.git",
+        "url": "https://github.com/jrasky/kernel",
         "date": "November 2015",
         "description": "Kernel is my OS research project, where I try out some ideas that have been stewing in my brain for long enough, and try to learn as much as I can along the way."
-    }
+    },
+	{
+		"name": "Corepack",
+		"url": "https://github.com/jrasky/corepack",
+		"date": "May 2016",
+		"description": "Corepack is an implementation of the Messagepack serialization format for serde. I originally wrote it as a component of my kernel. I have now stopped using it there, but other are now interested and sometimes contribute, so the project continues."
+	}
 ]
