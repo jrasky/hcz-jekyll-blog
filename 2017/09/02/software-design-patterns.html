@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="/static/img/favicon.ico" />
+        <title>Software Design Patterns - Jerome Rasky</title>
+        <meta name="author" content="Jerome Rasky" />
+        <meta name="description" content="Software Design Patterns" />
+        <meta name="keywords" content="Software Design Patterns, Jerome Rasky, " />
+
+        <meta content="" property="fb:app_id">
+        <meta content="Jerome Rasky" property="og:site_name">
+        
+          <meta content="Software Design Patterns" property="og:title">
+        
+        
+          <meta content="article" property="og:type">
+        
+        
+          <meta content="Personal Website" property="og:description">
+        
+        
+          <meta content="http://rasky.co//2017/09/02/software-design-patterns.html" property="og:url">
+        
+        
+          <meta content="2017-09-02T00:00:00-07:00" property="article:published_time">
+          <meta content="http://rasky.co//about/" property="article:author">
+        
+        
+          <meta content="http://rasky.co//static/img/logo-high-resolution.png" property="og:image">
+        
+        
+          
+        
+        
+          
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:creator" content="@">
+        
+          <meta name="twitter:title" content="Software Design Patterns">
+        
+        
+          <meta name="twitter:url" content="http://rasky.co//2017/09/02/software-design-patterns.html">
+        
+        
+          <meta name="twitter:description" content="Personal Website">
+        
+        
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <!-- Polyfill for html imports -->
+    <script type="text/javascript" src="/static/js/webcomponents-lite.min.js"></script>
+    <!-- The actual html imports -->
+	  <link rel="import" href="/static/imports.html">
+  </head>
+
+  <body class="home overflow-hidden">
+    <div class="header-panel shadow-z-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="row-picture">
+              <img id="about" class="logo-img" src="/static/img/avatar.jpg" height="75px" width="75px">
+            </div>
+            <div class="row-details">
+              <h4 class="list-group-item-heading">Jerome Rasky</h4>
+              <p class="list-group-item-text">Software Engineer</p>
+            </div>
+            <div class="navbar-header pull-right">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-2x fa-bars"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <h2 class="blog-title-pro">Software Design Patterns</h2>
+            <p class="info">
+              
+                <span class="time">02 Sep 2017</span>
+              
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container main outer">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-xs-12">
+          <nav class="menu">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="list-separator nav navbar-nav well well-primary post">
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12 current-menu-item software-design-patterns.html"><a href="/" target="_self"><i class="fa fa-home"></i> Home</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  software-design-patterns.html"><a href="/about/" target="_self"><i class="fa fa-comments"></i> About</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  software-design-patterns.html"><a href="/projects" target="_self"><i class="fa fa-desktop"></i> Projects</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  software-design-patterns.html"><a href="/resume.pdf" target="_blank"><i class="fa fa-graduation-cap"></i> Resume</a></li>
+
+	
+	
+	
+	
+	
+	
+    
+	
+	<li class="col-lg-12 col-md-12 col-sm-4 col-xs-12  software-design-patterns.html"><a href="https://github.com/jrasky" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+
+</ul>
+
+    </div>
+    </nav>
+
+    </div>
+    <div class="col-lg-9 col-md-8 col-xs-12 full">
+      <div class="post-content well">
+<article class="content">
+    <div class="post"><p>Software is full of design patterns. What I’ve come to realize over the course of the last summer is that function of software can be split along somewhat generic lines. These steps are not extremely clear cut, nor is it possible to strictly categorize every line this way. The lesson here is that thinking along these lines is a productive way to consider the organization of the software that you write.</p>
+
+<p>This is inspired by <a href="https://www.destroyallsoftware.com/">Destroy All Software</a>’s talk called <a href="https://www.destroyallsoftware.com/talks/boundaries">Boundaries</a>, which presents the concept of functional core, imperative shell. I have found this model very useful, but Gary Bernhardt himself does not have an answer for how to shape the imperative shell. By building software along the lines of imperative shell, functional core, I have come to realize these distinctions below. Following these steps gives a clearer shape to the imperative shell, and clarifies the exact role of the functional core.</p>
+
+<p>These are probably not new ideas, but they are ideas that I have found specifically helpful in considering the design of software components.</p>
+
+<p>More than these principles, having enough time to develop software is critical. Good design choices do not lend themselves well to expediency, and chances are if you are feeling time pressure your priorities will shift and your code will suffer no matter what. Getting your sprints under control is absolutely the best way to improve software quality. Once you have reached a sustainable pace, these steps below may become useful.</p>
+
+<h2 id="determines-input">Determines Input</h2>
+<p>Software often starts by determining the input provided by the user. Obtaining this input is a fundamentally imperative task that involves modifying global state. Transactions are dependent on the will of the user, so user input must be determined before a transaction can be built.</p>
+
+<h2 id="determines-state">Determines State</h2>
+<p>Software then determines the current state of the system. User commands typically involve some kind of stateful transaction against the current state, such as “copy file.” Before a decision can be made about what kind of transaction to construct, the current state needs to be available.</p>
+
+<h2 id="builds-transaction">Builds Transaction</h2>
+<p>With the user input and the current state gathered, the software can now make decisions. These decisions involve considering the current state and the user input, in order to determine what kind of transaction to build, and what parameters to give to that transaction. This part of the code is functional, since it maps input state onto an output transaction, without otherwise invoking any side effects.</p>
+
+<h2 id="executes-transaction">Executes Transaction</h2>
+<p>With the transaction now built, the software can take its parameters and kind and invoke side effects to execute the transaction. There may also be error handling here, or other sub-patterns of this kind for cases such as rollback. Software does not make decisions here, other than directly from the parameters of the transaction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Most software resembles the steps above. Or, at least, the above steps can be extracted out of many pieces of software. Badly written software will often mix these steps together, making it very tough to test each part of the process separately. Following this philosophy of separation will split your software into components that are easier to reason about and test. By cleanly separating decisions from side effects, integration tests can be fewer and simpler, with faster functional tests picking up the slack instead.</p>
+</div>
+</article>
+<hr />
+
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+
+
+<div class="PageNavigation">
+  
+    <a class="prev" href="/2017/06/09/android-performance.html">&laquo; Android Performance</a>
+  
+  
+</div>
+
+</div>
+
+      <div class="row">
+        <div class="col-md-12 col-xs-12 footer">
+          <footer>
+  © 2017 Jerome Rasky and others, provided under the <a href="/LICENSE.txt" target="_blank">MIT</a> license.
+</footer>
+
+        </div>
+      </div>
+    </div> <!-- end /.col-md-9 -->
+  </div> <!-- end /.row -->
+</div>
+
+  </body>
+</html>
