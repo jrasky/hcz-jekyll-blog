@@ -5,27 +5,36 @@ permalink: /about/
 ---
 
 I'm Jerome Rasky, a software engineer from California currently pursuing a
-Bachelor of Computer Science at the University of British Columbia in Vancouver,
-Canada.
+Bachelors of Computer Science at the University of British Columbia in
+Vancouver, Canada.
 
 Through my work as an intern in a number of positions, as well as my general
-experience in a wide-ranging set of skills in computer science, I have the
-experience to take on almost any challenge.
+experience in a wide-ranging set of skills in computer science, I'm confident I
+can take on almost any challenge.
 
 Interesting challenges are really what I strive for, especially in my personal
-projects. When I started my operating system kernel as a side-project, I had
-very little idea how many functions of an operating system actually came
-together. It took a lot of searching and learning to be able to accomplish the
-ideas that I had built up in my mind.
+projects. When I started my operating system kernel as a side-project, I had no
+idea how operating systems came together, or how to communicate with hardware.
+Undeterred, I jumped in, and through way too many long nights and lots of very
+close reading, I slowly pulled back the curtain on a part of computer science
+that had always mystified me.
 
 Beyond just computer science, I'm always searching for the next challenge to
-take on. I am currently the Vice Presidence External of the UBC Computer Science
-Student Society, charged with the annual Technical Career Fair. Managing this
-event has challenged my time management and communication skills like never
-before. Taking responsibility for people and deadlines is something that I
-wasn't very used to before, but something that I'm quickly learning to do
-effectively.
+take on. I'm the former Vice President External of the UBC Computer Science
+Student Society, and current VP Social. Last year as VP External I was charged
+with the annual UBC Technical Career Fair, an event that spans five different
+organizations. This year, I'm the organizer for all the social events the CS
+club puts on. That means effectively managing people and resources to put
+together great experiences.
 
-On the side, I also like to have some fun. Life isn't complete without good
-friends and good food, both of which are things I strive for daily. I'm excited
-for things to come, and for where my life will bring me in the next few years.
+When my friends see me reading the C++ standard, they tell me that I have a
+warped idea of "fun." I disagree: I think everybody likes satisfying their
+curiosity. I also think balance is very important in life, which is why I value
+my own and others' time a lot. I always want to work as hard as I can, but
+working hard means making time for friends and family so that you can recharge.
+
+I'm very optimistic about the future. There's so much to be excited about, both
+at the scale of the whole world, for things like advances in medicine, but also
+at the personal level. Younger me never thought my life would be anything like
+it is today. If you have something to add to this great adventure, do get in
+touch!
