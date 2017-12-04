@@ -32,138 +32,25 @@ const DIST = 'dist';
 const SRC = 'src/_site';
 const NOTSRC = '!src/_site';
 
+// Helpers for creating paths
 function notsrc(subpath) {
     return !subpath ? NOTSRC : path.join(NOTSRC, subpath);
-};
+}
 
 function src(subpath) {
     return !subpath ? SRC : path.join(SRC, subpath);
-};
+}
 
 function dist(subpath) {
     return !subpath ? DIST : path.join(DIST, subpath);
-};
-
-function doVulcanize(opts) {
-    opts = opts || {};
-
-	return through.obj(function (file, enc, cb) {
-		if (file.isNull()) {
-            cb(null, file);
-			return;
-		}
-
-		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-vulcanize', 'Streaming not supported'));
-			return;
-		}
-
-        // vulcanize expects target path to be relative to abspath
-        let filePath = opts.abspath ? path.relative(opts.abspath, file.path) : file.path;
-
-		(new Vulcanize(opts)).process(filePath, function (err, inlinedHtml) {
-			if (err) {
-				cb(new gutil.PluginError('gulp-vulcanize', err, {fileName: filePath}));
-				return;
-			}
-
-			file.contents = new Buffer(inlinedHtml);
-			cb(null, file);
-		});
-	});
 }
 
-function imageOptimizeTask(src, dest) {
-    return gulp.src(src)
-        .pipe($.imagemin({
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest(dest))
-        .pipe($.size({title: 'images'}));
-};
-
-function optimizeHtmlTask(src, dest) {
-    // TODO: Actually make it minimize or do something to the html
-    gulp.src(src)
-        .pipe(gulp.dest(dest));
-};
-
-// Optimize images
-gulp.task('images', ['copy'], function() {
-    return imageOptimizeTask(src('static/img/**/*'), dist('static/img'));
+// Build production files, the default task
+gulp.task('default', ['clean'], function(cb) {
+    runSequence('imports', cb);
 });
 
-// Copy select bower scripts to the static directory
-gulp.task('static', function() {
-    return gulp.src([
-        'src/bower_components/webcomponentsjs/webcomponents-lite.min.js'
-    ], {
-        dot: true
-    })
-        .pipe(gulp.dest('src/static/js'))
-        .pipe($.size({
-            title: 'static'
-        }));
-});
-
-// Copy all files at the root level (app)
-gulp.task('copy', ['jekyllbuild'], function() {
-    return gulp.src([
-        src('**'),
-        notsrc('bower_components'),
-        notsrc('cache-config.json'),
-        notsrc('.DS_Store')
-    ], {
-        dot: true
-    })
-		.pipe(gulp.dest(dist()))
-        .pipe($.size({
-            title: 'copy'
-        }));
-});
-
-// Copy web fonts to dist
-gulp.task('fonts', ['copy'], function() {
-    return gulp.src([src('static/fonts/**')])
-        .pipe(gulp.dest(dist('static/fonts')))
-        .pipe($.size({
-            title: 'fonts'
-        }));
-});
-
-// Scan your HTML for assets & optimize them
-gulp.task('html', ['copy'], function() {
-    return optimizeHtmlTask(
-        // TODO: Changed extension from HTML because JS wasn't getting copied over.
-        [src('**/*.html'), notsrc('bower_components/**/*.html'), notsrc('static/**/*.html')],
-        dist());
-});
-
-// Vulcanize granular configuration
-gulp.task('imports', ['images', 'fonts', 'html'], function() {
-    return gulp.src(src('static/imports.html'))
-        .pipe(doVulcanize({
-            stripComments: true,
-            inlineCss: true,
-            inlineScripts: true,
-            abspath: src()
-        }))
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            conservativeCollapse: true,
-            minifyJS: true,
-            minifyCSS: true
-        }))
-        .pipe(gulp.dest(dist('static')))
-        .pipe($.size({title: 'imports'}));
-});
-
-// Clean output directory
-gulp.task('clean', function() {
-    return del([src(), dist()]);
-});
-
+// Serve without building, useful for rapid development
 gulp.task('serve', ['static'], function(done) {
 	const args = ['exec', 'jekyll', 'serve'];
 
@@ -196,15 +83,81 @@ gulp.task('serve:dist', ['default'], function() {
                 }
             }
         },
-        // Run as an https by uncommenting 'https: true'
-        // Note: this uses an unsigned certificate which on first access
-        //       will present a certificate warning in the browser.
-        // https: true,
         server: {
 			baseDir: dist()
 		},
         middleware: [historyApiFallback()]
     });
+});
+
+// Clean output directory
+gulp.task('clean', function() {
+    return del([src(), dist()]);
+});
+
+// Vulcanize granular configuration
+gulp.task('imports', ['images', 'fonts', 'html'], function() {
+    return gulp.src(src('static/imports.html'))
+        .pipe(doVulcanize({
+            stripComments: true,
+            inlineCss: true,
+            inlineScripts: true,
+            abspath: src()
+        }))
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyJS: true,
+            minifyCSS: true
+        }))
+        .pipe(gulp.dest(dist('static')))
+        .pipe($.size({title: 'imports'}));
+});
+
+// Optimize images
+gulp.task('images', ['copy'], function() {
+    return gulp.src(src('static/img/**/*'))
+        .pipe($.imagemin({
+            progressive: true,
+            interlaced: true
+        }))
+        .pipe(gulp.dest(dist('static/img')))
+        .pipe($.size({title: 'images'}));
+});
+
+// Copy web fonts to dist
+gulp.task('fonts', ['copy'], function() {
+    return gulp.src([src('static/fonts/**')])
+        .pipe(gulp.dest(dist('static/fonts')))
+        .pipe($.size({
+            title: 'fonts'
+        }));
+});
+
+// Scan your HTML for assets & optimize them
+gulp.task('html', ['copy'], function() {
+    return gulp.src([
+        src('**/*.html'),
+        notsrc('bower_components/**/*.html'),
+        notsrc('static/**/*.html')
+    ])
+        .pipe(gulp.dest(dist()));
+});
+
+// Copy all files at the root level (app)
+gulp.task('copy', ['jekyllbuild'], function() {
+    return gulp.src([
+        src('**'),
+        notsrc('bower_components'),
+        notsrc('cache-config.json'),
+        notsrc('.DS_Store')
+    ], {
+        dot: true
+    })
+		.pipe(gulp.dest(dist()))
+        .pipe($.size({
+            title: 'copy'
+        }));
 });
 
 gulp.task('jekyllbuild', ['static'], function(done) {
@@ -218,7 +171,44 @@ gulp.task('jekyllbuild', ['static'], function(done) {
     return jekyll
 });
 
-// Build production files, the default task
-gulp.task('default', ['clean'], function(cb) {
-    runSequence('imports', cb);
+// Copy select bower scripts to the static directory
+gulp.task('static', function() {
+    return gulp.src([
+        'src/bower_components/webcomponentsjs/webcomponents-lite.min.js'
+    ], {
+        dot: true
+    })
+        .pipe(gulp.dest('src/static/js'))
+        .pipe($.size({
+            title: 'static'
+        }));
 });
+
+function doVulcanize(opts) {
+    opts = opts || {};
+
+	return through.obj(function (file, enc, cb) {
+		if (file.isNull()) {
+            cb(null, file);
+			return;
+		}
+
+		if (file.isStream()) {
+			cb(new gutil.PluginError('gulp-vulcanize', 'Streaming not supported'));
+			return;
+		}
+
+        // vulcanize expects target path to be relative to abspath
+        let filePath = opts.abspath ? path.relative(opts.abspath, file.path) : file.path;
+
+		(new Vulcanize(opts)).process(filePath, function (err, inlinedHtml) {
+			if (err) {
+				cb(new gutil.PluginError('gulp-vulcanize', err, {fileName: filePath}));
+				return;
+			}
+
+			file.contents = new Buffer(inlinedHtml);
+			cb(null, file);
+		});
+	});
+}
