@@ -19,12 +19,12 @@
         "text": "Resume",
         "url": "/resume.pdf",
         "icon": "fa-graduation-cap",
-        "target": _blank
+        "target": "_blank"
     },
     {
         "text": "Github",
         "url": "https://github.com/jrasky",
         "icon": "fa-github",
-        "target": _blank
+        "target": "_blank"
     }
 ]

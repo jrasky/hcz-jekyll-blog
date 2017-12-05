@@ -14,16 +14,15 @@
   "license": "MIT",
   "private": true,
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "**/.*"
   ],
   "dependencies": {
-    "polymer": "^1.7.0",
-    "paper-button": "^1.0.14",
-    "paper-menu": "^1.2.2",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.24"
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^0.5.10",
+    "font-awesome": "^4.7.0",
+    "paper-button": "^2.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.20",
+    "roboto-fontface": "^0.8.0"
   }
 }
