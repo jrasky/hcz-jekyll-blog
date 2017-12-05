@@ -141,6 +141,12 @@ gulp.task('html', ['copy'], function() {
         notsrc('bower_components/**/*.html'),
         notsrc('static/**/*.html')
     ])
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyJS: true,
+            minifyCSS: true
+        }))
         .pipe(gulp.dest(dist()));
 });
 
@@ -148,11 +154,14 @@ gulp.task('html', ['copy'], function() {
 gulp.task('copy', ['jekyllbuild'], function() {
     return gulp.src([
         src('**'),
+        notsrc('bower_components/**'),
         notsrc('bower_components'),
+        notsrc('static/**'),
         notsrc('cache-config.json'),
         notsrc('.DS_Store')
     ], {
-        dot: true
+        dot: true,
+        base: src()
     })
 		.pipe(gulp.dest(dist()))
         .pipe($.size({
@@ -179,6 +188,9 @@ gulp.task('static', function() {
         dot: true
     })
         .pipe(gulp.dest('src/static/js'))
+        // copy to the dist static directory as well:
+        // these scripts are dependencies in a special way
+        .pipe(gulp.dest(dist('static/js')))
         .pipe($.size({
             title: 'static'
         }));
