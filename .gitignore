@@ -6,4 +6,4 @@ _site/
 /src/_site
 /dist/
 /src/bower_components/
-/src/static/js/webcomponents-lite.min.js
+.jekyll-metadata

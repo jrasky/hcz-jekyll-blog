@@ -15,7 +15,6 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const del = require('del');
-const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
 const path = require('path');
 const historyApiFallback = require('connect-history-api-fallback');
@@ -46,13 +45,16 @@ function dist(subpath) {
 }
 
 // Build production files, the default task
-gulp.task('default', ['clean'], function(cb) {
-    runSequence('imports', cb);
+gulp.task('default', ['copy-resources', 'copy-bower', 'html', 'images', 'imports'], function (cb) {cb()});
+
+// Clean output directory
+gulp.task('clean', function () {
+    return del([src(), dist()]);
 });
 
 // Serve without building, useful for rapid development
-gulp.task('serve', ['static'], function(done) {
-	const args = ['exec', 'jekyll', 'serve'];
+gulp.task('serve', function (cb) {
+	const args = ['exec', 'jekyll', 'serve', '--incremental'];
 
 	if (argv.port) {
 		args.push(`--port=${argv.port}`);
@@ -60,7 +62,7 @@ gulp.task('serve', ['static'], function(done) {
 
 	const jekyll = spawn('bundle', args, {
 		stdio: 'inherit', shell: true
-	}).on('close', done);
+	}).on('close', cb);
 
     jekyll.on('exit', function(code) {
         gulpCallBack(code === 0 ? null : `ERROR: Jekyll process exited with code: ${code}`);
@@ -70,7 +72,7 @@ gulp.task('serve', ['static'], function(done) {
 });
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function() {
+gulp.task('serve:dist', ['default'], function () {
     browserSync({
         port: 5001,
         notify: false,
@@ -90,13 +92,8 @@ gulp.task('serve:dist', ['default'], function() {
     });
 });
 
-// Clean output directory
-gulp.task('clean', function() {
-    return del([src(), dist()]);
-});
-
-// Vulcanize granular configuration
-gulp.task('imports', ['images', 'fonts', 'html'], function() {
+// Vulcanize imports file
+gulp.task('imports', ['build-jekyll'], function () {
     return gulp.src(src('static/imports.html'))
         .pipe(doVulcanize({
             stripComments: true,
@@ -115,7 +112,7 @@ gulp.task('imports', ['images', 'fonts', 'html'], function() {
 });
 
 // Optimize images
-gulp.task('images', ['copy'], function() {
+gulp.task('images', ['build-jekyll'], function () {
     return gulp.src(src('static/img/**/*'))
         .pipe($.imagemin({
             progressive: true,
@@ -125,17 +122,8 @@ gulp.task('images', ['copy'], function() {
         .pipe($.size({title: 'images'}));
 });
 
-// Copy web fonts to dist
-gulp.task('fonts', ['copy'], function() {
-    return gulp.src([src('static/fonts/**')])
-        .pipe(gulp.dest(dist('static/fonts')))
-        .pipe($.size({
-            title: 'fonts'
-        }));
-});
-
 // Scan your HTML for assets & optimize them
-gulp.task('html', ['copy'], function() {
+gulp.task('html', ['build-jekyll'], function () {
     return gulp.src([
         src('**/*.html'),
         notsrc('bower_components/**/*.html'),
@@ -150,10 +138,11 @@ gulp.task('html', ['copy'], function() {
         .pipe(gulp.dest(dist()));
 });
 
-// Copy all files at the root level (app)
-gulp.task('copy', ['jekyllbuild'], function() {
+// Copy resource (non-html) files
+gulp.task('copy-resources', ['build-jekyll'], function () {
     return gulp.src([
         src('**'),
+        notsrc('**/*.html'),
         notsrc('bower_components/**'),
         notsrc('bower_components'),
         notsrc('static/**'),
@@ -169,31 +158,31 @@ gulp.task('copy', ['jekyllbuild'], function() {
         }));
 });
 
-gulp.task('jekyllbuild', ['static'], function(done) {
-    const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', shell: true })
-        .on('close', done);
+// Copy certain bower resources to dist
+gulp.task('copy-bower', function () {
+    return gulp.src([
+        'src/bower_components/webcomponentsjs/webcomponents-lite.js',
+        'src/bower_components/font-awesome/fonts/*',
+        'src/bower_components/roboto-fontface/fonts/roboto/*'
+    ], {
+        dot: true,
+        base: 'src'
+    })
+        .pipe(gulp.dest(dist()))
+        .pipe($.size({
+            title: 'static'
+        }));
+});
 
-    jekyll.on('exit', function(code) {
+gulp.task('build-jekyll', function (cb) {
+    const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', shell: true })
+        .on('close', cb);
+
+    jekyll.on('exit', function (code) {
         gulpCallBack(code === 0 ? null : `ERROR: Jekyll process exited with code: ${code}`);
     });
 
     return jekyll
-});
-
-// Copy select bower scripts to the static directory
-gulp.task('static', function() {
-    return gulp.src([
-        'src/bower_components/webcomponentsjs/webcomponents-lite.min.js'
-    ], {
-        dot: true
-    })
-        .pipe(gulp.dest('src/static/js'))
-        // copy to the dist static directory as well:
-        // these scripts are dependencies in a special way
-        .pipe(gulp.dest(dist('static/js')))
-        .pipe($.size({
-            title: 'static'
-        }));
 });
 
 function doVulcanize(opts) {
