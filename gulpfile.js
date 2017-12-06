@@ -18,7 +18,6 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const path = require('path');
 const historyApiFallback = require('connect-history-api-fallback');
-const Vulcanize = require('vulcanize');
 const through = require('through2');
 const gutil = require('gulp-util');
 const spawn = require('child_process').spawn;
@@ -45,7 +44,7 @@ function dist(subpath) {
 }
 
 // Build production files, the default task
-gulp.task('default', ['copy-resources', 'copy-bower', 'html', 'images', 'imports'], function (cb) {cb()});
+gulp.task('default', ['copy-resources', 'copy-external', 'html', 'images'], function (cb) {cb()});
 
 // Clean output directory
 gulp.task('clean', function () {
@@ -92,42 +91,12 @@ gulp.task('serve:dist', ['default'], function () {
     });
 });
 
-// Vulcanize imports file
-gulp.task('imports', ['build-jekyll'], function () {
-    return gulp.src(src('static/imports.html'))
-        .pipe(doVulcanize({
-            stripComments: true,
-            inlineCss: true,
-            inlineScripts: true,
-            abspath: src()
-        }))
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            conservativeCollapse: true,
-            minifyJS: true,
-            minifyCSS: true
-        }))
-        .pipe(gulp.dest(dist('static')))
-        .pipe($.size({title: 'imports'}));
-});
-
-// Optimize images
-gulp.task('images', ['build-jekyll'], function () {
-    return gulp.src(src('static/img/**/*'))
-        .pipe($.imagemin({
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest(dist('static/img')))
-        .pipe($.size({title: 'images'}));
-});
-
 // Scan your HTML for assets & optimize them
 gulp.task('html', ['build-jekyll'], function () {
     return gulp.src([
         src('**/*.html'),
-        notsrc('bower_components/**/*.html'),
-        notsrc('static/**/*.html')
+        notsrc('external/**'),
+        notsrc('static/**')
     ])
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -143,9 +112,8 @@ gulp.task('copy-resources', ['build-jekyll'], function () {
     return gulp.src([
         src('**'),
         notsrc('**/*.html'),
-        notsrc('bower_components/**'),
-        notsrc('bower_components'),
-        notsrc('static/**'),
+        notsrc('external/**'),
+        notsrc('static/img/**'),
         notsrc('cache-config.json'),
         notsrc('.DS_Store')
     ], {
@@ -158,19 +126,36 @@ gulp.task('copy-resources', ['build-jekyll'], function () {
         }));
 });
 
+// Optimize images
+gulp.task('images', function () {
+    return gulp.src('src/static/img/**')
+        .pipe($.imagemin({
+            progressive: true,
+            interlaced: true
+        }))
+        .pipe(gulp.dest(dist('static/img')))
+        .pipe($.size({title: 'images'}));
+});
+
 // Copy certain bower resources to dist
-gulp.task('copy-bower', function () {
+gulp.task('copy-external', function () {
     return gulp.src([
-        'src/bower_components/webcomponentsjs/webcomponents-lite.js',
-        'src/bower_components/font-awesome/fonts/*',
-        'src/bower_components/roboto-fontface/fonts/roboto/*'
+        'src/external/font-awesome/fonts/*',
+        'src/external/roboto-fontface/fonts/roboto/*',
+        'src/external/jquery/dist/jquery.min.js',
+        'src/external/bootstrap/dist/js/bootstrap.min.js',
+        'src/external/bootstrap-material-design/dist/js/material.min.js',
+        'src/external/bootstrap/dist/css/bootstrap.min.css',
+        'src/external/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
+        'src/external/font-awesome/css/font-awesome.min.css',
+        'src/external/roboto-fontface/css/roboto/roboto-fontface.css'
     ], {
         dot: true,
         base: 'src'
     })
         .pipe(gulp.dest(dist()))
         .pipe($.size({
-            title: 'static'
+            title: 'external'
         }));
 });
 
@@ -184,32 +169,3 @@ gulp.task('build-jekyll', function (cb) {
 
     return jekyll
 });
-
-function doVulcanize(opts) {
-    opts = opts || {};
-
-	return through.obj(function (file, enc, cb) {
-		if (file.isNull()) {
-            cb(null, file);
-			return;
-		}
-
-		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-vulcanize', 'Streaming not supported'));
-			return;
-		}
-
-        // vulcanize expects target path to be relative to abspath
-        let filePath = opts.abspath ? path.relative(opts.abspath, file.path) : file.path;
-
-		(new Vulcanize(opts)).process(filePath, function (err, inlinedHtml) {
-			if (err) {
-				cb(new gutil.PluginError('gulp-vulcanize', err, {fileName: filePath}));
-				return;
-			}
-
-			file.contents = new Buffer(inlinedHtml);
-			cb(null, file);
-		});
-	});
-}

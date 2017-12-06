@@ -1,9 +1,8 @@
-_site/
-*~
 /.tramp_history
-/bower_components/
-/node_modules/
 /src/_site
 /dist/
-/src/bower_components/
+
+*~
+node_modules/
+external/
 .jekyll-metadata

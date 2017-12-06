@@ -3,14 +3,13 @@
   <head>
     {% include meta.html %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-    <!-- Polyfill for html imports -->
-    <script type="text/javascript" src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <!-- The actual html imports -->
-	  <link rel="import" href="/static/imports.html">
+    
+    {% include css.html %}
   </head>
 
   <body class="home overflow-hidden">
     {% include header.html %}
     {% include main.html %}
+    {% include js.html %}
   </body>
 </html>
