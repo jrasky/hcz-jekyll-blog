@@ -1,5 +1,5 @@
 .project-card {
-    height: 37rem;
+    min-height: 37rem;
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;

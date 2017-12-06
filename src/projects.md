@@ -7,7 +7,7 @@ permalink: /projects/
     <div class="post">
         <div class="projects row">
             {% for i in site.data.projects %}
-            <div class="col-sm-4">
+            <div class="col-lg-4 col-sm-6">
                 <div class="card project-card">
                     <div class="card-body">
                         <h4 class="card-title">{{ i.name }}</h4>
