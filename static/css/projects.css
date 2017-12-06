@@ -1,0 +1,21 @@
+.project-card {
+    min-height: 37rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card > .card-body {
+    height: initial;
+}
+
+.project-card > .card-footer {
+    height: initial;
+    padding-top: 0;
+}
+
+.project-card > .card-footer > a {
+    left: 0 !important;
+    top: 0;
+}
