@@ -85,16 +85,27 @@ This is almost a combination of the first anti-pattern, but it's more of a case 
 
 ```rust
 struct Algo {
-    param: usize
+    param: usize,
+    data: AlgoData
 }
 
 struct AlgoData {
-    inner_buffer: 
+    inner_buffer: Vec<usize>
+}
+
+impl AlgoData {
+    fn do_work(&mut self, param: usize) {
+        // Do work using param
+    }
 }
 
 impl Algo {
-    fn do_work(&self, params: &AlgoParams) -> Vec<usize> {
-        // Do work using self and return the resulting buffer
+    fn process(&mut self) {
+        self.data.do_work(self.param);
     }
 }
 ```
+
+The solution in this case is to split the data structure. When you see an out parameter in Rust, what you really want is a separate object, which has its own methods. By doing this, you can narrow the borrow down to just the field of Algo that you want to update.
+
+There's a common theme in these two problems, which is that of overly broad borrowing. In rust, `&mut self` really means you are borrowing the whole struct. An important question you should ask yourself is what the scope of the different references really means in your code. If you're borrowing `&mut self`, that means the entire data structure, when what you probably want is to only borrow part of the data structure.
