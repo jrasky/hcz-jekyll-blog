@@ -18,7 +18,10 @@ permalink: /projects/
                     </div>
                     <div class="card-footer">
                         {% if i.url %}
-                        <a href="{{ i.url }}" class="btn btn-raised btn-info" target="_blank">View</a>
+                        <a href="{{ i.url }}" class="btn btn-raised btn-primary" target="_blank">View</a>
+                        {% endif %}
+                        {% if i.code %}
+                        <a href="{{ i.code }}" class="btn btn-raised btn-info" target="_blank">Code</a>
                         {% endif %}
                     </div>
                 </div>
