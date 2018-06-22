@@ -28,5 +28,11 @@
 		"url": "https://github.com/jrasky/corepack",
 		"date": "May 2016",
 		"description": "Corepack is an implementation of the Messagepack serialization format for serde. I originally wrote it as a component of my kernel. I have now stopped using it there, but other are now interested and sometimes contribute, so the project continues."
+	},
+	{
+		"name": "Daily Journal",
+		"url": "/daily_journal",
+		"date": "June 2018",
+		"description": "A simple daily journal I developed to play around with AWS services. Backed by DynamoDB, API Gateway and Cognito, zero code was written server side. Client side is a React + Redux app written in TypeScript, and makes use of AWS Amplify."
 	}
 ]

@@ -18,9 +18,7 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const path = require('path');
 const historyApiFallback = require('connect-history-api-fallback');
-const through = require('through2');
-const gutil = require('gulp-util');
-const spawn = require('child_process').spawn;
+const spawn = require('child-process-promise').spawn;
 const argv = require('yargs').argv;
 const htmlmin = require('gulp-htmlmin');
 const gulpCallBack = require('gulp-callback');
@@ -44,7 +42,13 @@ function dist(subpath) {
 }
 
 // Build production files, the default task
-gulp.task('default', ['copy-resources', 'copy-external', 'html', 'images'], function (cb) {cb()});
+gulp.task('default', [
+    'copy-resources',
+    'copy-external',
+    'copy-daily-journal',
+    'html',
+    'images'
+], function (k) {k()});
 
 // Clean output directory
 gulp.task('clean', function () {
@@ -52,22 +56,16 @@ gulp.task('clean', function () {
 });
 
 // Serve without building, useful for rapid development
-gulp.task('serve', function (cb) {
+gulp.task('serve', async function () {
 	const args = ['exec', 'jekyll', 'serve', '--incremental'];
 
 	if (argv.port) {
 		args.push(`--port=${argv.port}`);
 	}
 
-	const jekyll = spawn('bundle', args, {
+	await spawn('bundle', args, {
 		stdio: 'inherit', shell: true
-	}).on('close', cb);
-
-    jekyll.on('exit', function(code) {
-        gulpCallBack(code === 0 ? null : `ERROR: Jekyll process exited with code: ${code}`);
-    });
-
-    return jekyll;
+	});
 });
 
 // Build and serve the output from the dist build
@@ -159,13 +157,19 @@ gulp.task('copy-external', function () {
         }));
 });
 
-gulp.task('build-jekyll', function (cb) {
-    const jekyll = spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', shell: true })
-        .on('close', cb);
-
-    jekyll.on('exit', function (code) {
-        gulpCallBack(code === 0 ? null : `ERROR: Jekyll process exited with code: ${code}`);
+gulp.task('build-jekyll', async function () {
+    await spawn('bundle', ['exec', 'jekyll', 'build'], {
+        stdio: 'inherit', shell: true
     });
+});
 
-    return jekyll
+gulp.task('build-daily-journal', async function() {
+    await spawn('gulp', ['--gulpfile', 'daily_journal/gulpfile.js'], {
+        stdio: 'inherit', shell: true
+    });
+});
+
+gulp.task('copy-daily-journal', ['build-daily-journal'], function() {
+    return gulp.src('./daily_journal/dist/*')
+        .pipe(gulp.dest(dist('daily_journal')));
 });

@@ -2,3 +2,6 @@
 	path = ghpages
 	url = git@github.com:jrasky/jrasky.github.io.git
 	branch = master
+[submodule "daily_journal"]
+	path = daily_journal
+	url = git@github.com:jrasky/daily_journal.git
