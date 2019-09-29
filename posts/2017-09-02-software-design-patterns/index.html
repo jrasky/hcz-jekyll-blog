@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Software Design Patterns - Jerome Rasky</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Software Design Patterns" />
+<meta property="og:description" content="Software is full of design patterns. What I’ve come to realize over the course of the last summer is that function of software can be split along somewhat generic lines. These steps are not extremely clear cut, nor is it possible to strictly categorize every line this way. The lesson here is that thinking along these lines is a productive way to consider the organization of the software that you write." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jrasky.github.io/posts/2017-09-02-software-design-patterns/" />
+<meta property="article:published_time" content="2017-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-09-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Software Design Patterns"/>
+<meta name="twitter:description" content="Software is full of design patterns. What I’ve come to realize over the course of the last summer is that function of software can be split along somewhat generic lines. These steps are not extremely clear cut, nor is it possible to strictly categorize every line this way. The lesson here is that thinking along these lines is a productive way to consider the organization of the software that you write."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/main.css" /><script src="http://jrasky.github.io/js/feather.min.js"></script><script src="http://jrasky.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Jerome Rasky</h1>
+	<div class="site-description"><h2>Software Engineer</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/jrasky" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Software Design Patterns</h1>
+			<div class="meta">Posted at &mdash; Sep 2, 2017</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>Software is full of design patterns. What I’ve come to realize over the course
+of the last summer is that function of software can be split along somewhat
+generic lines. These steps are not extremely clear cut, nor is it possible to
+strictly categorize every line this way. The lesson here is that thinking along
+these lines is a productive way to consider the organization of the software
+that you write.</p>
+
+<p>This is inspired by <a href="https://www.destroyallsoftware.com/">Destroy All
+Software</a>’s talk called
+<a href="https://www.destroyallsoftware.com/talks/boundaries">Boundaries</a>, which
+presents the concept of functional core, imperative shell. I have found this
+model very useful, but Gary Bernhardt himself does not have an answer for how to
+shape the imperative shell. By building software along the lines of imperative
+shell, functional core, I have come to realize these distinctions below.
+Following these steps gives a clearer shape to the imperative shell, and
+clarifies the exact role of the functional core.</p>
+
+<p>These are probably not new ideas, but they are ideas that I have found
+specifically helpful in considering the design of software components.</p>
+
+<p>More than these principles, having enough time to develop software is critical.
+Good design choices do not lend themselves well to expediency, and chances are
+if you are feeling time pressure your priorities will shift and your code will
+suffer no matter what. Getting your sprints under control is absolutely the best
+way to improve software quality. Once you have reached a sustainable pace, these
+steps below may become useful.</p>
+
+<h2 id="determines-input">Determines Input</h2>
+
+<p>Software often starts by determining the input provided by the user. Obtaining
+this input is a fundamentally imperative task that involves modifying global
+state. Transactions are dependent on the will of the user, so user input must be
+determined before a transaction can be built.</p>
+
+<h2 id="determines-state">Determines State</h2>
+
+<p>Software then determines the current state of the system. User commands
+typically involve some kind of stateful transaction against the current state,
+such as “copy file.” Before a decision can be made about what kind of
+transaction to construct, the current state needs to be available.</p>
+
+<h2 id="builds-transaction">Builds Transaction</h2>
+
+<p>With the user input and the current state gathered, the software can now make
+decisions. These decisions involve considering the current state and the user
+input, in order to determine what kind of transaction to build, and what
+parameters to give to that transaction. This part of the code is functional,
+since it maps input state onto an output transaction, without otherwise invoking
+any side effects.</p>
+
+<h2 id="executes-transaction">Executes Transaction</h2>
+
+<p>With the transaction now built, the software can take its parameters and kind
+and invoke side effects to execute the transaction. There may also be error
+handling here, or other sub-patterns of this kind for cases such as rollback.
+Software does not make decisions here, other than directly from the parameters
+of the transaction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Most software resembles the steps above. Or, at least, the above steps can be
+extracted out of many pieces of software. Badly written software will often mix
+these steps together, making it very tough to test each part of the process
+separately. Following this philosophy of separation will split your software
+into components that are easier to reason about and test. By cleanly separating
+decisions from side effects, integration tests can be fewer and simpler, with
+faster functional tests picking up the slack instead.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = '';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

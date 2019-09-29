@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Facebook, and Personal Data Collection - Jerome Rasky</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Facebook, and Personal Data Collection" />
+<meta property="og:description" content="Over the past few weeks, the story of Cambridge Analytica, and Facebook&rsquo;s data collection policies, have been dominating a certain part of the news cycle. I read Hacker News, and so I get exposed to a certain kind of perspective on those kinds of issues. I wanted to put together some of my thoughts on the subject, both as a result of reading news articles, and from personal conversations.
+The latest iteration of the debate that I&rsquo;ve read, in this Hacker News thread, gets at a lot of the aspects of the conversation that I&rsquo;ve been engaging with." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jrasky.github.io/posts/2018-04-18-on-facebook-personal-data/" />
+<meta property="article:published_time" content="2018-04-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-04-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Facebook, and Personal Data Collection"/>
+<meta name="twitter:description" content="Over the past few weeks, the story of Cambridge Analytica, and Facebook&rsquo;s data collection policies, have been dominating a certain part of the news cycle. I read Hacker News, and so I get exposed to a certain kind of perspective on those kinds of issues. I wanted to put together some of my thoughts on the subject, both as a result of reading news articles, and from personal conversations.
+The latest iteration of the debate that I&rsquo;ve read, in this Hacker News thread, gets at a lot of the aspects of the conversation that I&rsquo;ve been engaging with."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/main.css" /><script src="http://jrasky.github.io/js/feather.min.js"></script><script src="http://jrasky.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Jerome Rasky</h1>
+	<div class="site-description"><h2>Software Engineer</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/jrasky" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Facebook, and Personal Data Collection</h1>
+			<div class="meta">Posted at &mdash; Apr 18, 2018</div>
+		</div>
+
+		<div class="markdown">
+			<p>Over the past few weeks, the story of Cambridge Analytica, and Facebook&rsquo;s data
+collection policies, have been dominating a certain part of the news cycle. I
+read Hacker News, and so I get exposed to a certain kind of perspective on those
+kinds of issues. I wanted to put together some of my thoughts on the subject,
+both as a result of reading news articles, and from personal conversations.</p>
+
+<p>The latest iteration of the debate that I&rsquo;ve read, in this <a href="https://news.ycombinator.com/item?id=16868688">Hacker News
+thread</a>, gets at a lot of the
+aspects of the conversation that I&rsquo;ve been engaging with. This sort of relates
+to the last post that I made about Slack dropping their support for IRC. I feel
+almost like there&rsquo;s a difference of temperament, because I always feel like I
+fall on a different side from a lot of the comments I read on various tech
+websites.</p>
+
+<p>In particular, a lot of comments act like the only thing between them and
+tyranny is their ad blocker.</p>
+
+<blockquote>
+<p>As an aside I was on EdX earlier and even they are using connect.facebook.net
+too. Absolutely disgusting.</p>
+</blockquote>
+
+<p>And then, faced with the inevitable &ldquo;retaliation is possible,&rdquo; their community
+is obviously too large to be worth fighting.</p>
+
+<blockquote>
+<p>It would be absolutely incredible if Facebook et al &ldquo;took their ball and went
+home&rdquo; throwing away <em>500 million customers.</em></p>
+</blockquote>
+
+<p>More concretely, I fail to see the horrible outcome from Facebook et al&rsquo;s
+personal data collection. I haven&rsquo;t yet lost my job, or my property, or friends,
+or really faced any damages directly due to their data collection, and as best I
+know, nobody else really has either (at least, to any scale). The best argument
+I&rsquo;ve heard about the downsides rely on counter-factuals, about how Facebook
+might maybe do something wrong at some point.</p>
+
+<p>Otherwise, I&rsquo;ve seen various data breaches in the past shown as examples, but
+those are a different kind of category. Unless the suggestion is that no
+personal data should be collected <em>at all</em>, how do data privacy laws prevent
+data breaches? A higher standard of security, maybe? Equifax was dealing with
+financial data, which already has those kinds of rules in place, and yet still
+leaked data. Maybe privacy regulations would limit the severity of the breach?
+The problem is that the only real damage that data breaches cause usually come
+from password or financial information being stolen, and both of those are
+generally well-guarded already.</p>
+
+<p>If personal data shouldn&rsquo;t be collected <em>at all</em>, presumably that means a strong
+intent requirement with regard to collection (otherwise, no more Facebook or
+Instagram or online banking). What is data tracking used for then, mainly, that
+would fall under the axe in this case? All I can figure is user analytics,
+visible to users in the form of curated content and ads. Should those kinds of
+things be banned? People definitely find them useful, given the fact that
+non-curated, non ad-based content has existed for longer and yet is less popular
+today.</p>
+
+<p>At this point, I think I should plug a Gary Bernhardt talk, specifically the one
+about <a href="https://www.destroyallsoftware.com/talks/ideology">ideology</a>. In that
+talk, Gary makes a very important point that we all carry with us beliefs that
+structure our understanding of the world, and we usually don&rsquo;t even know we&rsquo;re
+carrying them. To that end, I can only really guess at what the underlying
+belief is in this case. I want to extend Gary&rsquo;s point a bit, to notice that
+often people don&rsquo;t know what&rsquo;s meaningful about what they do.</p>
+
+<p>The case in point of this is the free software movement. A lot of people
+thought, and certainly a lot of people still think that the important part was
+giving users control over their machines. The reality in projects like LLVM and
+Rust is that what really mattered was creating a robust public domain of
+software. Many companies and projects start out using free software, which
+allows them to grow enough to move onto better proprietary solutions. The value
+in free software is to make it easier for people to express themselves, and not
+necessarily to give users greater control over their machines. In fact, a lot of
+recent developments in software and hardware have moved in exactly the opposite
+direction, decreasing control given to users in exchange for security.</p>
+
+<p>This probably has something to do with why founders so often end up being ousted
+as the company they founded grows. Hacker News may think the end game of privacy
+regulation is to destroy ad tech entirely, but I doubt that&rsquo;s where the chips
+will fall. In fact, ad tech works the way it does, and to a degree these kinds
+of debates rage on precisely because people don&rsquo;t know what they themselves are
+up to.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = '';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

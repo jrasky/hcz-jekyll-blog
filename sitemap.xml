@@ -1,520 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Jerome Rasky</title>
-    <description>Personal Website</description>
-    <link>http://rasky.co//</link>
-    <atom:link href="http://rasky.co//sitemap.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Jun 2018 18:39:10 -0700</pubDate>
-    <lastBuildDate>Thu, 21 Jun 2018 18:39:10 -0700</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
-    
-      <item>
-        <title>Facebook, and Personal Data Collection</title>
-        <description>&lt;p&gt;Over the past few weeks, the story of Cambridge Analytica, and Facebook’s data
-collection policies, have been dominating a certain part of the news cycle. I
-read Hacker News, and so I get exposed to a certain kind of perspective on those
-kinds of issues. I wanted to put together some of my thoughts on the subject,
-both as a result of reading news articles, and from personal conversations.&lt;/p&gt;
-
-&lt;p&gt;The latest iteration of the debate that I’ve read, in this &lt;a href=&quot;https://news.ycombinator.com/item?id=16868688&quot;&gt;Hacker News
-thread&lt;/a&gt;, gets at a lot of the
-aspects of the conversation that I’ve been engaging with. This sort of relates
-to the last post that I made about Slack dropping their support for IRC. I feel
-almost like there’s a difference of temperament, because I always feel like I
-fall on a different side from a lot of the comments I read on various tech
-websites.&lt;/p&gt;
-
-&lt;p&gt;In particular, a lot of comments act like the only thing between them and
-tyranny is their ad blocker.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;As an aside I was on EdX earlier and even they are using connect.facebook.net
-too. Absolutely disgusting.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And then, faced with the inevitable “retaliation is possible,” their community
-is obviously too large to be worth fighting.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It would be absolutely incredible if Facebook et al “took their ball and went
-home” throwing away &lt;em&gt;500 million customers.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;More concretely, I fail to see the horrible outcome from Facebook et al’s
-personal data collection. I haven’t yet lost my job, or my property, or friends,
-or really faced any damages directly due to their data collection, and as best I
-know, nobody else really has either (at least, to any scale). The best argument
-I’ve heard about the downsides rely on counter-factuals, about how Facebook
-might maybe do something wrong at some point.&lt;/p&gt;
-
-&lt;p&gt;Otherwise, I’ve seen various data breaches in the past shown as examples, but
-those are a different kind of category. Unless the suggestion is that no
-personal data should be collected &lt;em&gt;at all&lt;/em&gt;, how do data privacy laws prevent
-data breaches? A higher standard of security, maybe? Equifax was dealing with
-financial data, which already has those kinds of rules in place, and yet still
-leaked data. Maybe privacy regulations would limit the severity of the breach?
-The problem is that the only real damage that data breaches cause usually come
-from password or financial information being stolen, and both of those are
-generally well-guarded already.&lt;/p&gt;
-
-&lt;p&gt;If personal data shouldn’t be collected &lt;em&gt;at all&lt;/em&gt;, presumably that means a strong
-intent requirement with regard to collection (otherwise, no more Facebook or
-Instagram or online banking). What is data tracking used for then, mainly, that
-would fall under the axe in this case? All I can figure is user analytics,
-visible to users in the form of curated content and ads. Should those kinds of
-things be banned? People definitely find them useful, given the fact that
-non-curated, non ad-based content has existed for longer and yet is less popular
-today.&lt;/p&gt;
-
-&lt;p&gt;At this point, I think I should plug a Gary Bernhardt talk, specifically the one
-about &lt;a href=&quot;https://www.destroyallsoftware.com/talks/ideology&quot;&gt;ideology&lt;/a&gt;. In that
-talk, Gary makes a very important point that we all carry with us beliefs that
-structure our understanding of the world, and we usually don’t even know we’re
-carrying them. To that end, I can only really guess at what the underlying
-belief is in this case. I want to extend Gary’s point a bit, to notice that
-often people don’t know what’s meaningful about what they do.&lt;/p&gt;
-
-&lt;p&gt;The case in point of this is the free software movement. A lot of people
-thought, and certainly a lot of people still think that the important part was
-giving users control over their machines. The reality in projects like LLVM and
-Rust is that what really mattered was creating a robust public domain of
-software. Many companies and projects start out using free software, which
-allows them to grow enough to move onto better proprietary solutions. The value
-in free software is to make it easier for people to express themselves, and not
-necessarily to give users greater control over their machines. In fact, a lot of
-recent developments in software and hardware have moved in exactly the opposite
-direction, decreasing control given to users in exchange for security.&lt;/p&gt;
-
-&lt;p&gt;This probably has something to do with why founders so often end up being ousted
-as the company they founded grows. Hacker News may think the end game of privacy
-regulation is to destroy ad tech entirely, but I doubt that’s where the chips
-will fall. In fact, ad tech works the way it does, and to a degree these kinds
-of debates rage on precisely because people don’t know what they themselves are
-up to.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Apr 2018 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2018/04/18/on-facebook-personal-data.html</link>
-        <guid isPermaLink="true">http://rasky.co//2018/04/18/on-facebook-personal-data.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>On Slack's Bait and Switch</title>
-        <description>&lt;p&gt;I’ve been reading for a couple of days about the news that Slack is dropping support for IRC in their chat clients. &lt;a href=&quot;https://lobste.rs/&quot;&gt;Lobsters&lt;/a&gt; is definitely a biased place, but the sentiment there in the upvoted comments I think represents a non-trivial portion of at least the Lobsters community. Comments below come from the &lt;a href=&quot;https://lobste.rs/s/dxk5li/slack_s_bait_switch&quot;&gt;Lobsters thread&lt;/a&gt; on the news.&lt;/p&gt;
-
-&lt;p&gt;In particular, people are upset because they had a certain workflow with their own IRC or other client, and their workflow is now going to change.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This isn’t a new lesson with mission-critical, proprietary software. Anyone relying on profit-hungry, 3rd parties is just asking for it.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The issue I take with this kind of reasoning is that free software isn’t any different. Does nobody remember the whole Gnome 3 debacle, or the systemd fight, or pulseaudio, or any other of the myriad of tools that are controversial? Even just a cursory look at the landscape reveals that people get upset about their workflow changing no matter if a “profit-hungry 3rd party” is behind it.&lt;/p&gt;
-
-&lt;p&gt;In general, there are two ways to respond when the world changes. Either you adapt the world, or you adapt your behavior. Some people, in particular those complaining about Slack dropping support for IRC, are at least on this topic firmly in the “adapt the world” camp. Sometimes that’s reasonable, and I’ve certainly changed tooling or customized the tools that I have to achieve that. I use dark userstyles on websites, for instance, since I enjoy that look more.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I’m not a fan of Slack, particularly their godawful clients, but I think this article falls into the classic “It is what I want, therefore it is what everyone wants” fallacy. As my boss at Apple once told me, “we’d go broke if we made products for you.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This comment gets at the idea of adapting your behavior. It turns out that people behave differently, and if you’re trying to accomodate a large number of people, you have to sacrifice certain niches. Furthermore, almost every time I’ve run into people using Slack it’s been through their client, and not through IRC. It takes time and resources to federate; at minimum, you have to thoroughly test your platform against whatever other implementations you’re federating against. Would those that want IRC support be willing to pay for its development? I highly, highly doubt it.&lt;/p&gt;
-
-&lt;p&gt;I’m not sure about the “godawful” clients argument. I know people don’t like electron apps, and that native apps a lot less resource intensive. But this begs the question, what sitation are you in that it matters so much? Is your workstation so resource constrained you can’t run an electron app? Why not change your workstation, in that case? Electron apps might be less performant, but how much time do you really spend chatting with people? Certainly, if others find Slack more usable, is it not worthwhile to adapt your workflow as a power user to suit them?&lt;/p&gt;
-
-&lt;p&gt;Finally, the people working for companies like Slack are like everybody else. Certainly they aren’t monsters, and I don’t doubt there is a contingent at Slack that is upset at the decision. Lots of choices that companies make can seem very backwards from the outside but be good, and conversely choices that seem outwardly good can be inwardly bad. I don’t think I know enough to really pass judgement on Slack’s choices, but it’s likely wise to think twice before imputing bad motives to them.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 13 Mar 2018 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2018/03/13/on-slack-bait-switch.html</link>
-        <guid isPermaLink="true">http://rasky.co//2018/03/13/on-slack-bait-switch.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Two anti-patterns in Rust</title>
-        <description>&lt;p&gt;I had an interesting conversation with a friend today about programming languages. in particular, we talked about Rust, which my friend had recently used to do a small personal project. We talked about what matters in languages, and how companies and people choose the languages that they do.&lt;/p&gt;
-
-&lt;p&gt;I’m a huge fan of Rust. I think it solves the data sharing problem, which is a domain that’s traditionally been the realm of functional languages. Those languages have their merits, but it turns out that humans tend not to think the way that functional languages work.&lt;/p&gt;
-
-&lt;p&gt;At one point, my friend got into two issues he ran into with Rust, which he felt frustrated about, and which made him feel like the language really wasn’t ready for prime time. I understand how he feels, because one of the hardest things to do when learning a language is to figure out why the language is built a certain way. I know that I get frustrated at Go sometimes for reasons that feel similar.&lt;/p&gt;
-
-&lt;p&gt;The first anti-pattern my friend came across he called “partial borrows,” which more concretely is the issue around how member functions that take pointers to &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; borrow the whole struct. Functionally, what he wants to do is write an algorithm as member functions on one data structure that reference different parts of the struct, and then compose calls to those methods to form an algorithm. An example would be a method that produces a reference to some data item, which is used to decide on what kind of mutation to do.&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// Produce a reference to a data item&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update_accumulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// Update the accumulator with the data item&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.get_item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;data_key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c&quot;&gt;// Will not compile!&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.update_accumulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;My sense about the matter is that the above code has a code smell, namely that of a large struct. In a way, Rust is trying to tell you that accumulators and data stores should be separate from each other. When you borrow from &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;, that borrow effectively depends on the entire state of your struct. In other languages, you’d have a new invariant: don’t break the borrowed item while updating the accumulator. In Rust, the compiler steps in because it can’t prove that your methods have those invariants.&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;data_items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;accum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Accumulator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.data_items&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.get_item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;data_key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c&quot;&gt;// Will compile happily&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.accum&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It might not be readily obvious how the above code is really any different. All I’ve done is to re-arrange how the data is organized, and the pattern of calls. In most languages, this would be largely identical, since most languages let you alias mutable data.&lt;/p&gt;
-
-&lt;p&gt;By splitting your data into pieces, and borrowing each piece separately, Rust can prove that the two borrows can’t interfere with each other. There have been discussions about this issue in Rust, and how it would be great to have some way to express those invariants in the type system, in a way merging the semantics of other languages to a point into Rust. Maybe that’s the right direction.&lt;/p&gt;
-
-&lt;p&gt;The second anti-pattern my friend tried to implement was that of out parameters.&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Vec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;// Do some work and mutate &lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In imperative languages without move semantics, this kind of pattern can be somewhat essential. By passing in a reference to a vector, you avoid copying all the values. Unfortunately in Rust, out parameters play poorly with the borrow checker. One out parameter is generally alright, but if you start to have more than one out parameter, you can get some very bad interactions.&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;inner_buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Vec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Vec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// Do some work and mutate buffer, using information from self&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// Will not compile!&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.inner_buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This is almost a combination of the first anti-pattern, but it’s more of a case of out parameters. With imperative programming, it’s normal to destructively update some object with information, and then eventually process its internal state into some kind of output. This won’t work, however, since the update method takes self as a reference: if the above could compile, self would alias buffer, and that breaks invariants in Rust.&lt;/p&gt;
-
-&lt;div class=&quot;language-rust highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AlgoData&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AlgoData&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;inner_buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Vec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AlgoData&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;usize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;// Do work using param&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;impl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Algo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.data&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.do_work&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;.param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The solution in this case is to split the data structure. When you see an out parameter in Rust, what you really want is a separate object, which has its own methods. By doing this, you can narrow the borrow down to just the field of Algo that you want to update.&lt;/p&gt;
-
-&lt;p&gt;There’s a common theme in these two problems, which is that of overly broad borrowing. In rust, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;mut self&lt;/code&gt; really means you are borrowing the whole struct. An important question you should ask yourself is what the scope of the different references really means in your code. If you’re borrowing &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;mut self&lt;/code&gt;, that means the entire data structure, when what you probably want is to only borrow part of the data structure.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 17 Feb 2018 00:00:00 -0800</pubDate>
-        <link>http://rasky.co//2018/02/17/two-anti-patterns-rust.html</link>
-        <guid isPermaLink="true">http://rasky.co//2018/02/17/two-anti-patterns-rust.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Apple's Defaults System</title>
-        <description>&lt;p&gt;If you have an iPhone, or even if you don’t, you’ve likely heard the plight of iOS users who are unable to change the default application for handling a certain kind of content.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/apple-ios-defaults-firefox.png&quot; alt=&quot;Firefox documentation lamenting the lack of changeable defaults&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Apple’s defaults system is kind of broken. In particular, it’s missing any kind of disambiguation. That means that every app has to have a unique url scheme that it uses, and it alone. I’m not sure if it’s a requirement, but it seems like apps are misusing the “authority” part of a URI as part of the path. For example, Twitter uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;twitter&lt;/code&gt; scheme for handling inter-app links on iOS:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/apple-ios-defaults-twitter.png&quot; alt=&quot;Twitter has issues with authority&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It feels so distinctly un-Apple to have made things work this way. The way Android handles the situation is much more correct, and makes a difference between host and path. Of course, Android includes UI to allow users to select which app should handle a URL if multiple apps are able to.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/apple-ios-defaults-android.png&quot; alt=&quot;Android's URL matching is more complete&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Apple’s own documentation has fun using URL and URI interchangeably, which is kind of annoying since people should take the time to make documentation as correct as possible. URL in particular is for resources over a network, and apps on the same phone are definitely not over the network.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/apple-ios-defaults-docs.png&quot; alt=&quot;Apple also has issues with authority&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Apple has certainly heard people complain that they can’t change app defaults at all on iOS. I’m sure they have their own internal reasoning as to why they haven’t done it yet. Their documentation talks about there being no process “yet” to determine which app actually gets a scheme that it registers if that scheme conflicts with another app, which means that they at least recognize that in theory it’s something they could fix. My best guess is that their reasoning is that a feature that allows easily changing default apps would lower engagement for their own and others’ apps. I think it’s pretty cynical to think along those lines, but it’s tough to justify if not for that reason.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/apple-ios-defaults-disambiguation.png&quot; alt=&quot;Apple uses the magic word&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The biggest question is whether changing defaults would actually make the iPhone better over time. The issue is that it likely wouldn’t. The iPhone is more than just a hardware platform, it’s an entire ecosystem of services. You can use other apps on the iPhone: the integration point is the homescreen. If you remember, the very first iPhone didn’t have third-party apps at all. The amount of work that it probably took to overhaul everything to allow for third party apps was no doubt huge. Third party apps, in a general sense, grow the usefulness of the iPhone, especially in the long run.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 31 Dec 2017 00:00:00 -0800</pubDate>
-        <link>http://rasky.co//2017/12/31/apple-ios-defaults.html</link>
-        <guid isPermaLink="true">http://rasky.co//2017/12/31/apple-ios-defaults.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Software Design Patterns</title>
-        <description>&lt;p&gt;Software is full of design patterns. What I’ve come to realize over the course of the last summer is that function of software can be split along somewhat generic lines. These steps are not extremely clear cut, nor is it possible to strictly categorize every line this way. The lesson here is that thinking along these lines is a productive way to consider the organization of the software that you write.&lt;/p&gt;
-
-&lt;p&gt;This is inspired by &lt;a href=&quot;https://www.destroyallsoftware.com/&quot;&gt;Destroy All Software&lt;/a&gt;’s talk called &lt;a href=&quot;https://www.destroyallsoftware.com/talks/boundaries&quot;&gt;Boundaries&lt;/a&gt;, which presents the concept of functional core, imperative shell. I have found this model very useful, but Gary Bernhardt himself does not have an answer for how to shape the imperative shell. By building software along the lines of imperative shell, functional core, I have come to realize these distinctions below. Following these steps gives a clearer shape to the imperative shell, and clarifies the exact role of the functional core.&lt;/p&gt;
-
-&lt;p&gt;These are probably not new ideas, but they are ideas that I have found specifically helpful in considering the design of software components.&lt;/p&gt;
-
-&lt;p&gt;More than these principles, having enough time to develop software is critical. Good design choices do not lend themselves well to expediency, and chances are if you are feeling time pressure your priorities will shift and your code will suffer no matter what. Getting your sprints under control is absolutely the best way to improve software quality. Once you have reached a sustainable pace, these steps below may become useful.&lt;/p&gt;
-
-&lt;h2 id=&quot;determines-input&quot;&gt;Determines Input&lt;/h2&gt;
-&lt;p&gt;Software often starts by determining the input provided by the user. Obtaining this input is a fundamentally imperative task that involves modifying global state. Transactions are dependent on the will of the user, so user input must be determined before a transaction can be built.&lt;/p&gt;
-
-&lt;h2 id=&quot;determines-state&quot;&gt;Determines State&lt;/h2&gt;
-&lt;p&gt;Software then determines the current state of the system. User commands typically involve some kind of stateful transaction against the current state, such as “copy file.” Before a decision can be made about what kind of transaction to construct, the current state needs to be available.&lt;/p&gt;
-
-&lt;h2 id=&quot;builds-transaction&quot;&gt;Builds Transaction&lt;/h2&gt;
-&lt;p&gt;With the user input and the current state gathered, the software can now make decisions. These decisions involve considering the current state and the user input, in order to determine what kind of transaction to build, and what parameters to give to that transaction. This part of the code is functional, since it maps input state onto an output transaction, without otherwise invoking any side effects.&lt;/p&gt;
-
-&lt;h2 id=&quot;executes-transaction&quot;&gt;Executes Transaction&lt;/h2&gt;
-&lt;p&gt;With the transaction now built, the software can take its parameters and kind and invoke side effects to execute the transaction. There may also be error handling here, or other sub-patterns of this kind for cases such as rollback. Software does not make decisions here, other than directly from the parameters of the transaction.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Most software resembles the steps above. Or, at least, the above steps can be extracted out of many pieces of software. Badly written software will often mix these steps together, making it very tough to test each part of the process separately. Following this philosophy of separation will split your software into components that are easier to reason about and test. By cleanly separating decisions from side effects, integration tests can be fewer and simpler, with faster functional tests picking up the slack instead.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 02 Sep 2017 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2017/09/02/software-design-patterns.html</link>
-        <guid isPermaLink="true">http://rasky.co//2017/09/02/software-design-patterns.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Android Performance</title>
-        <description>&lt;p&gt;Despite their impressive hardware specifications, Android devices have an unfortunate reputation of poor performance. Frames get dropped, launching an application takes a long time, or the whole device seems to freeze. This kind of unpredictable performance isn’t great. One important factor of any platform is the programming language used. Android is based around Java, a dynamic, garbage-collected language with a hefty runtime and complex features that are tough to optimize. Android’s kernel, Linux, is designed more for servers than smartphones, and amplifies performance issues by making poor use of hardware. The story of Android performance follows the design of the platform, from the Java compiler and runtime to the Linux kernel at the base.&lt;/p&gt;
-
-&lt;p&gt;The Java Virtual Machine on Android was originally designed to be simple, to conform to the resource constraints of the hardware it was running on. Google chose to create a memory-efficient bytecode and an interpreter for their JVM. Over time, hardware improved, and the JVM shifted to become a Just-In-Time compiler. JIT compilers are fast, and avoid complex optimizations. Regardless, compiler overhead meant application startup time became problem. Google tackled this by designing an ahead-of-time compiler to supplement the existing JIT design. By shifting the work of the compiler from application startup to installation, startup time improved without sacrificing performance.&lt;/p&gt;
-
-&lt;p&gt;Garbage collection is about shifting the cost of memory management to reduce latency. First generation hardware limitations required choosing a design for the garbage collector that performed poorly on newer hardware. Applications often had to wait on the garbage collector, at busy times that made this pausing very noticeable. The new JIT design for the JVM improved on these glitches, introducing concurrent garbage collection and compaction. Those and other more complex strategies mean that modern applications rarely pause to wait for garbage collection.&lt;/p&gt;
-
-&lt;p&gt;Between ahead-of-time compilation and improved garbage collection, the new Android JVM accomplishes the important goal of getting out of the way. There are some remaining performance issues, but most are solved. Some applications have worse performance owing to their own design, which will always be the case on any platform.&lt;/p&gt;
-
-&lt;p&gt;The JVM’s design had matured, but issues around latency persisted, especially audio latency. Gaps in audio playback are even more unpleasant than dropped frames, and cause loud pops. Google’s documentation details how the default scheduler in Linux prioritizes threads that have not used processor time recently. This means that despite giving priority to UI and audio threads, other tasks might preempt user-facing ones during periods of high system usage. The solution for audio threads is real-time scheduling, so that they will always run immediately if they are ready.&lt;/p&gt;
-
-&lt;p&gt;Google has recently announced that Android “O” will carry hard limits on background task execution. This will improve the situation considerably, as applications will no longer be as able to impact performance once they aren’t open. Google’s other project, Fuschia, is a complete redesign of the kernel, and represents the more nuclear approach to the performance problem in Android. It will be interesting to see what solutions are in store in the future, and what shape the Android operating system and ecosystem will take.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 09 Jun 2017 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2017/06/09/android-performance.html</link>
-        <guid isPermaLink="true">http://rasky.co//2017/06/09/android-performance.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why Concurrency doesn't Matter</title>
-        <description>&lt;p&gt;Or, why I like Rust&lt;/p&gt;
-
-&lt;p&gt;There’s a lot of talk these days about how important concurrency is. The reasons
-are obvious: in a world of computing at scale, single processors don’t. Many
-people decry the death of Moore’s law, and increasingly they seem to be right.
-Transistors can only get so small, after all. As a result, the constantly
-increasing desire for computer performance will have to come from concurrency,
-working around the issue of Moore’s law entirely. All of this is sound reasoning.&lt;/p&gt;
-
-&lt;p&gt;Most older languages were designed in a world where Moore’s law was still very
-valid, and where compute performance came from single processors, not farms of
-them. Concurrency and scale networks existed, but were largely restricted to
-scientific computing or very special edge-cases, and the technologies that came
-out of them were not generally useful. Those days were great. However, that
-world doesn’t exist anymore, and instead the lessons being drawn from the
-current flock of “giants” is the importance of scale. The future is now, and it
-looks like networks.&lt;/p&gt;
-
-&lt;p&gt;As a result, these older languages did not serve the concurrency story very
-well. Though concurrency primitives existed in those languages, they usually
-require careful thought and planning for effective use. Data races abound,
-memory corruption is easy. In general, it’s not the most inviting environment.
-In reaction to this, certain modern languages tout “concurrency support” as a
-major feature. The goal: to be rid of the pitfalls of traditional concurrency,
-and instead present a sane, easy-to-use interface that falls neatly in with all
-the other traditional paradigms of programming everybody is used to. Truly a
-noble cause.&lt;/p&gt;
-
-&lt;p&gt;The problem lies here: concurrency is an anti-pattern to the traditional
-programming paradigms. Computing takes a certain level of discipline, especially
-with non-managed languages. Concurrency makes everything much harder, requiring
-either a much higher degree of discipline or a much higher degree of management.
-The latter group includes languages like Haskell, which are generally much more
-declarative. What you lose in terms of control over your code, however, you gain
-in performance. Suddenly, all the traditional problems with concurrency go away,
-and you’re left with something concurrent and safe. This is awesome, except that
-you lose many of the traditional paradigms most programmers are used to. It’s
-great for a wide variety of problems that benefit greatly from concurrency, but
-it’s also hard to get used to, and not great for an equally large number of
-corner cases in more traditional programming where a certain level of
-concurrency plays positively to the application. Not only this, but learning
-this style requires a lot of domain-specific work and knowledge. This doesn’t
-sound like the best solution.&lt;/p&gt;
-
-&lt;p&gt;What certain modern languages offer does sound like a great solution: sane
-concurrency without any of the micro-management baggage. It’s a great promise,
-but one that’s ultimately contradictory. These modern languages do provide great
-front-ends to the concurrency primitives everybody loves to hate. If your
-greatest worry is about correctly creating or scheduling threads, or scaling to
-tens of thousands of threads, or about correctly cleaning up a thread’s
-resources when it finishes, then these new languages offer exactly what you’re
-after.&lt;/p&gt;
-
-&lt;p&gt;That’s not really the–or, at least, my–greatest concern with threads.
-Obviously, resource management and scale are an issue, but those are whenever
-I’m doing any programming. They’re amplified by threads, but they aren’t
-fundamentally &lt;em&gt;new&lt;/em&gt; worries. The new worries I do have relate to data races.
-Threading means giving up a huge amount of control over how your code executes,
-which means any interactions different parts of your code have are now much less
-predictable. The easy way to get out of this trap is to prevent all
-interactions, but that precludes any real benefits that concurrency provides. If
-all concurrent tasks are completely independent, then they cannot service the
-same problem.&lt;/p&gt;
-
-&lt;p&gt;Using concurrency to work on a single problem requires sharing certain
-resources, even if those resources are simply messages. That shared state means
-data races are possible. Data races are an entirely different class of worries
-from what’s possible in traditional, single-threaded programming. These concerns
-are serviced by the micro-management model, but not by the sexy-interface model
-employed by certain modern languages. As a result, these new languages do not
-really solve any underlying problems, but instead lather on a fresh layer of
-paint. On a small scale, everything feels awesome. On a larger scale, all the
-same problems come back.&lt;/p&gt;
-
-&lt;p&gt;This is why concurrency doesn’t matter. It doesn’t because the real problems
-concurrency causes aren’t addressed by modern languages. Certain other, more
-declarative languages address them to a certain degree, but are “weird” enough
-to not be generally useful. Or, if they are, they haven’t seen very much
-adoption.&lt;/p&gt;
-
-&lt;p&gt;What about the resource management and scaling category of problems, however?
-Although they are fairly general, they are definitely amplified by concurrency.
-The traditional answer to resource management has been garbage collection, which
-is a good solution, but doesn’t &lt;em&gt;always&lt;/em&gt; scale very well. Not only this, but
-resource management incurs a performance penalty, caused by the garbage
-collection itself and by the extra work required when acquiring or releasing
-resources. Much like the micro-management model for concurrency, this doesn’t
-seem like the best solution.&lt;/p&gt;
-
-&lt;p&gt;This is where Rust comes in. Rust’s major innovation is the borrow checker, an
-additional bit of information the compiler tracks which enables it to determine
-when data comes into and falls out of scope. This means the compiler can
-identify in a deterministic fashion when to free resources, meaning it can
-insert this information into the binary it produces. No more need for separate
-garbage collection, instead resources are freed at the ends of certain lexical
-scopes. This can obviously hurt performance–especially when code is written
-such that large amounts of data are copied and freed–but this is always the
-case when the language does not micro-manage your code.&lt;/p&gt;
-
-&lt;p&gt;What isn’t always the case is the level of control that a borrow checker gives
-you. Even if the worst case isn’t very different from a garbage collector, the
-average case is much better. All the resources your program uses are right
-there, instead of being hidden away behind a garbage collector. Plus, the
-behavior is defined by the lexical scope of your code, and not by some black-box
-mechanics taking place behind the scenes of the garbage collector.&lt;/p&gt;
-
-&lt;p&gt;All of this makes for a mechanic that I think will survive Rust as a language.
-The borrow checker is something extremely useful in general programming, not
-only because it manages resources with no overhead, but because it also prevents
-many classes of memory corruption issues and data races often present in other
-languages. Much like type checking before it, I think borrow checking will
-become part of future languages and we’ll all wonder how we ever dealt with
-programming without it.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 21 Aug 2015 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2015/08/21/why-concurrency-doesnt-matter.html</link>
-        <guid isPermaLink="true">http://rasky.co//2015/08/21/why-concurrency-doesnt-matter.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The New MacBook</title>
-        <description>&lt;p&gt;The new MacBook is pretty cool. This morning, when I was watching the liveblog, their announcement of it being fanless made me immediately suspect that it would be ARM-based. I’m impressed by Intel, and their ability to bring the TDP down enough to not require a fan.&lt;/p&gt;
-
-&lt;p&gt;I’m similarly excited about Type C. It’s basically the god-cable that we’ve all always wanted: one that handles power delivery as well as bidirectional, high-bandwidth data delivery. It really fills all the connectivity needs of the laptop, except for analog output.&lt;/p&gt;
-
-&lt;p&gt;That being said, it is priced rather high. I know the overall quality of the components is to blame, but it would be nice to have it either be more on par with the performance of the Pro, or more on the price level of the Air.&lt;/p&gt;
-
-&lt;p&gt;As an aside, I’m somewhat fearful as the trend of computing is to move to more “secured” devices, and other technologies that have the end result of making it harder to run the OS of my choosing on my computers. I fear that one day I may be restricted to a very large degree on most devices.&lt;/p&gt;
-
-&lt;p&gt;I could completely deal with OS X or Windows; both are very good operating systems. The problem is their software packaging: since both are somewhat stable, and applications are more self-contained, everything just ships statically linked, giant binaries. Plus, neither operating system has anything nearing APT, making software management much harder than it has to be. Yes, OS X has the App Store, but it is missing most of the applications that I use on a regular basis.&lt;/p&gt;
-
-&lt;p&gt;This, plus desktop Linux is going to be very exciting in the next few years. KDBus is going to land soon, as well as Wayland/Mir/others. Valve is getting serious with SteamOS, and btrfs/systemd/containers are promising some very interesting things in the system management and software packaging areas. It’s just the right time to be using Linux, and having that taken away from me would make me sad.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 09 Mar 2015 00:00:00 -0700</pubDate>
-        <link>http://rasky.co//2015/03/09/the-new-macbook.html</link>
-        <guid isPermaLink="true">http://rasky.co//2015/03/09/the-new-macbook.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Working with the Terminal</title>
-        <description>&lt;p&gt;Having done by now a fair bit of work building a terminal application in Linux,
-I’d like to mention how much the interface matches what I’d like to call “the
-text box of doom.” There are a few major issues that I have with it, namely&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;No way to read out the contents of the screen&lt;/p&gt;
-
-    &lt;p&gt;I understand the issue with doing so, but there being no way of getting the
- contents of the current screen means there is no real way to know what is on
- there–even if you clear everything and redraw, there might be some quirks
- with the terminal emulator that cause it to not actually contain what you
- think it contains.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;No strict separation of control and text sequences&lt;/p&gt;
-
-    &lt;p&gt;Again, the limitations of the serial connection mean escape characters are
- really the only way to go when designing control sequences, but it would be
- nice to not mix them in with the text. I understand the simplicity of having
- applications just be able to print out contents and read back lines, but
- given the existence of termios this shouldn’t need to be. Instead, there
- should be a “high” mode where text is a control sequence.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Output at the end of the line counts as a newline&lt;/p&gt;
-
-    &lt;p&gt;Ideally, lines should be inputted as that: lines. At least, there should be
- a way to do so, much like there is a line input method on the other end.
- Applications shouldn’t have to worry about how long a line is exactly, and
- instead the terminal should treat each line like a line.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The result of all this is a lot of work and redundancy on the part of the
-application to maintain a correct representation of the state of the display,
-something which a good API should specifically avoid.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 06 Mar 2015 00:00:00 -0800</pubDate>
-        <link>http://rasky.co//2015/03/06/working-with-the-teminal.html</link>
-        <guid isPermaLink="true">http://rasky.co//2015/03/06/working-with-the-teminal.html</guid>
-        
-        
-      </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://jrasky.github.io/about/</loc>
+    <lastmod>2019-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/</loc>
+    <lastmod>2019-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2018-04-18-on-facebook-personal-data/</loc>
+    <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/</loc>
+    <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2018-03-13-on-slack-bait-switch/</loc>
+    <lastmod>2018-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2018-02-17-two-anti-patterns-rust/</loc>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2017-12-31-apple-ios-defaults/</loc>
+    <lastmod>2017-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2017-09-02-software-design-patterns/</loc>
+    <lastmod>2017-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2017-06-09-android-performance/</loc>
+    <lastmod>2017-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2015-08-21-why-concurrency-doesnt-matter/</loc>
+    <lastmod>2015-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2015-03-09-the-new-macbook/</loc>
+    <lastmod>2015-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/posts/2015-03-06-working-with-the-teminal/</loc>
+    <lastmod>2015-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jrasky.github.io/tags/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jerome Rasky</title>
+    <link>http://jrasky.github.io/</link>
+    <description>Recent content on Jerome Rasky</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://jrasky.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>http://jrasky.github.io/about/</link>
+      <pubDate>Sat, 28 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/about/</guid>
+      <description>I&amp;rsquo;m Jerome Rasky, a software engineer located in Seattle, Washington. I&amp;rsquo;m currently working at AWS, specifically on AWS IoT SiteWise. I&amp;rsquo;ve been involved many levels of engineering, from operations and infrastructure, to backend service design, to frontend web design. I love working on tough projects, and finding simple solutions to complex problems.</description>
+    </item>
+    
+    <item>
+      <title>Facebook, and Personal Data Collection</title>
+      <link>http://jrasky.github.io/posts/2018-04-18-on-facebook-personal-data/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2018-04-18-on-facebook-personal-data/</guid>
+      <description>Over the past few weeks, the story of Cambridge Analytica, and Facebook&amp;rsquo;s data collection policies, have been dominating a certain part of the news cycle. I read Hacker News, and so I get exposed to a certain kind of perspective on those kinds of issues. I wanted to put together some of my thoughts on the subject, both as a result of reading news articles, and from personal conversations.
+The latest iteration of the debate that I&amp;rsquo;ve read, in this Hacker News thread, gets at a lot of the aspects of the conversation that I&amp;rsquo;ve been engaging with.</description>
+    </item>
+    
+    <item>
+      <title>On Slack&#39;s Bait and Switch</title>
+      <link>http://jrasky.github.io/posts/2018-03-13-on-slack-bait-switch/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2018-03-13-on-slack-bait-switch/</guid>
+      <description>I&amp;rsquo;ve been reading for a couple of days about the news that Slack is dropping support for IRC in their chat clients. Lobsters is definitely a biased place, but the sentiment there in the upvoted comments I think represents a non-trivial portion of at least the Lobsters community. Comments below come from the Lobsters thread on the news.
+In particular, people are upset because they had a certain workflow with their own IRC or other client, and their workflow is now going to change.</description>
+    </item>
+    
+    <item>
+      <title>Two anti-patterns in Rust</title>
+      <link>http://jrasky.github.io/posts/2018-02-17-two-anti-patterns-rust/</link>
+      <pubDate>Sat, 17 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2018-02-17-two-anti-patterns-rust/</guid>
+      <description>I had an interesting conversation with a friend today about programming languages. in particular, we talked about Rust, which my friend had recently used to do a small personal project. We talked about what matters in languages, and how companies and people choose the languages that they do.
+I&amp;rsquo;m a huge fan of Rust. I think it solves the data sharing problem, which is a domain that&amp;rsquo;s traditionally been the realm of functional languages.</description>
+    </item>
+    
+    <item>
+      <title>Apple&#39;s Defaults System</title>
+      <link>http://jrasky.github.io/posts/2017-12-31-apple-ios-defaults/</link>
+      <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2017-12-31-apple-ios-defaults/</guid>
+      <description>If you have an iPhone, or even if you don&amp;rsquo;t, you&amp;rsquo;ve likely heard the plight of iOS users who are unable to change the default application for handling a certain kind of content.
+Apple&amp;rsquo;s defaults system is kind of broken. In particular, it&amp;rsquo;s missing any kind of disambiguation. That means that every app has to have a unique url scheme that it uses, and it alone. I&amp;rsquo;m not sure if it&amp;rsquo;s a requirement, but it seems like apps are misusing the &amp;ldquo;authority&amp;rdquo; part of a URI as part of the path.</description>
+    </item>
+    
+    <item>
+      <title>Software Design Patterns</title>
+      <link>http://jrasky.github.io/posts/2017-09-02-software-design-patterns/</link>
+      <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2017-09-02-software-design-patterns/</guid>
+      <description>Software is full of design patterns. What I’ve come to realize over the course of the last summer is that function of software can be split along somewhat generic lines. These steps are not extremely clear cut, nor is it possible to strictly categorize every line this way. The lesson here is that thinking along these lines is a productive way to consider the organization of the software that you write.</description>
+    </item>
+    
+    <item>
+      <title>Android Performance</title>
+      <link>http://jrasky.github.io/posts/2017-06-09-android-performance/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2017-06-09-android-performance/</guid>
+      <description>Despite their impressive hardware specifications, Android devices have an unfortunate reputation of poor performance. Frames get dropped, launching an application takes a long time, or the whole device seems to freeze. This kind of unpredictable performance isn’t great. One important factor of any platform is the programming language used. Android is based around Java, a dynamic, garbage-collected language with a hefty runtime and complex features that are tough to optimize. Android’s kernel, Linux, is designed more for servers than smartphones, and amplifies performance issues by making poor use of hardware.</description>
+    </item>
+    
+    <item>
+      <title>Why Concurrency doesn&#39;t Matter</title>
+      <link>http://jrasky.github.io/posts/2015-08-21-why-concurrency-doesnt-matter/</link>
+      <pubDate>Fri, 21 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2015-08-21-why-concurrency-doesnt-matter/</guid>
+      <description>Or, why I like Rust
+There&amp;rsquo;s a lot of talk these days about how important concurrency is. The reasons are obvious: in a world of computing at scale, single processors don&amp;rsquo;t. Many people decry the death of Moore&amp;rsquo;s law, and increasingly they seem to be right. Transistors can only get so small, after all. As a result, the constantly increasing desire for computer performance will have to come from concurrency, working around the issue of Moore&amp;rsquo;s law entirely.</description>
+    </item>
+    
+    <item>
+      <title>The New MacBook</title>
+      <link>http://jrasky.github.io/posts/2015-03-09-the-new-macbook/</link>
+      <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2015-03-09-the-new-macbook/</guid>
+      <description>The new MacBook is pretty cool. This morning, when I was watching the liveblog, their announcement of it being fanless made me immediately suspect that it would be ARM-based. I&amp;rsquo;m impressed by Intel, and their ability to bring the TDP down enough to not require a fan.
+I&amp;rsquo;m similarly excited about Type C. It&amp;rsquo;s basically the god-cable that we&amp;rsquo;ve all always wanted: one that handles power delivery as well as bidirectional, high-bandwidth data delivery.</description>
+    </item>
+    
+    <item>
+      <title>Working with the Terminal</title>
+      <link>http://jrasky.github.io/posts/2015-03-06-working-with-the-teminal/</link>
+      <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://jrasky.github.io/posts/2015-03-06-working-with-the-teminal/</guid>
+      <description>Having done by now a fair bit of work building a terminal application in Linux, I&amp;rsquo;d like to mention how much the interface matches what I&amp;rsquo;d like to call &amp;ldquo;the text box of doom.&amp;rdquo; There are a few major issues that I have with it, namely
+ No way to read out the contents of the screen
+I understand the issue with doing so, but there being no way of getting the contents of the current screen means there is no real way to know what is on there&amp;ndash;even if you clear everything and redraw, there might be some quirks with the terminal emulator that cause it to not actually contain what you think it contains.</description>
+    </item>
+    
+  </channel>
+</rss>

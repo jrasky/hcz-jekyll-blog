@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Apple&#39;s Defaults System - Jerome Rasky</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Apple&#39;s Defaults System" />
+<meta property="og:description" content="If you have an iPhone, or even if you don&rsquo;t, you&rsquo;ve likely heard the plight of iOS users who are unable to change the default application for handling a certain kind of content.
+Apple&rsquo;s defaults system is kind of broken. In particular, it&rsquo;s missing any kind of disambiguation. That means that every app has to have a unique url scheme that it uses, and it alone. I&rsquo;m not sure if it&rsquo;s a requirement, but it seems like apps are misusing the &ldquo;authority&rdquo; part of a URI as part of the path." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jrasky.github.io/posts/2017-12-31-apple-ios-defaults/" />
+<meta property="article:published_time" content="2017-12-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-12-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apple&#39;s Defaults System"/>
+<meta name="twitter:description" content="If you have an iPhone, or even if you don&rsquo;t, you&rsquo;ve likely heard the plight of iOS users who are unable to change the default application for handling a certain kind of content.
+Apple&rsquo;s defaults system is kind of broken. In particular, it&rsquo;s missing any kind of disambiguation. That means that every app has to have a unique url scheme that it uses, and it alone. I&rsquo;m not sure if it&rsquo;s a requirement, but it seems like apps are misusing the &ldquo;authority&rdquo; part of a URI as part of the path."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/main.css" /><script src="http://jrasky.github.io/js/feather.min.js"></script><script src="http://jrasky.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Jerome Rasky</h1>
+	<div class="site-description"><h2>Software Engineer</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/jrasky" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Apple&#39;s Defaults System</h1>
+			<div class="meta">Posted at &mdash; Dec 31, 2017</div>
+		</div>
+
+		<div class="markdown">
+			<p>If you have an iPhone, or even if you don&rsquo;t, you&rsquo;ve likely heard the plight of
+iOS users who are unable to change the default application for handling a
+certain kind of content.</p>
+
+<p><img src="/img/apple-ios-defaults-firefox.png" alt="Firefox documentation lamenting the lack of changeable defaults" /></p>
+
+<p>Apple&rsquo;s defaults system is kind of broken. In particular, it&rsquo;s missing any kind
+of disambiguation. That means that every app has to have a unique url scheme
+that it uses, and it alone. I&rsquo;m not sure if it&rsquo;s a requirement, but it seems
+like apps are misusing the &ldquo;authority&rdquo; part of a URI as part of the path. For
+example, Twitter uses the <code>twitter</code> scheme for handling inter-app links on iOS:</p>
+
+<p><img src="/img/apple-ios-defaults-twitter.png" alt="Twitter has issues with authority" /></p>
+
+<p>It feels so distinctly un-Apple to have made things work this way. The way
+Android handles the situation is much more correct, and makes a difference
+between host and path. Of course, Android includes UI to allow users to select
+which app should handle a URL if multiple apps are able to.</p>
+
+<p><img src="/img/apple-ios-defaults-android.png" alt="Android's URL matching is more complete" /></p>
+
+<p>Apple&rsquo;s own documentation has fun using URL and URI interchangeably, which is
+kind of annoying since people should take the time to make documentation as
+correct as possible. URL in particular is for resources over a network, and apps
+on the same phone are definitely not over the network.</p>
+
+<p><img src="/img/apple-ios-defaults-docs.png" alt="Apple also has issues with authority" /></p>
+
+<p>Apple has certainly heard people complain that they can&rsquo;t change app defaults at
+all on iOS. I&rsquo;m sure they have their own internal reasoning as to why they
+haven&rsquo;t done it yet. Their documentation talks about there being no process
+&ldquo;yet&rdquo; to determine which app actually gets a scheme that it registers if that
+scheme conflicts with another app, which means that they at least recognize that
+in theory it&rsquo;s something they could fix. My best guess is that their reasoning
+is that a feature that allows easily changing default apps would lower
+engagement for their own and others&rsquo; apps. I think it&rsquo;s pretty cynical to think
+along those lines, but it&rsquo;s tough to justify if not for that reason.</p>
+
+<p><img src="/img/apple-ios-defaults-disambiguation.png" alt="Apple uses the magic word" /></p>
+
+<p>The biggest question is whether changing defaults would actually make the iPhone
+better over time. The issue is that it likely wouldn&rsquo;t. The iPhone is more than
+just a hardware platform, it&rsquo;s an entire ecosystem of services. You can use
+other apps on the iPhone: the integration point is the homescreen. If you
+remember, the very first iPhone didn&rsquo;t have third-party apps at all. The amount
+of work that it probably took to overhaul everything to allow for third party
+apps was no doubt huge. Third party apps, in a general sense, grow the
+usefulness of the iPhone, especially in the long run.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = '';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

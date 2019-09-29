@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Why Concurrency doesn&#39;t Matter - Jerome Rasky</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Why Concurrency doesn&#39;t Matter" />
+<meta property="og:description" content="Or, why I like Rust
+There&rsquo;s a lot of talk these days about how important concurrency is. The reasons are obvious: in a world of computing at scale, single processors don&rsquo;t. Many people decry the death of Moore&rsquo;s law, and increasingly they seem to be right. Transistors can only get so small, after all. As a result, the constantly increasing desire for computer performance will have to come from concurrency, working around the issue of Moore&rsquo;s law entirely." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jrasky.github.io/posts/2015-08-21-why-concurrency-doesnt-matter/" />
+<meta property="article:published_time" content="2015-08-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-08-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why Concurrency doesn&#39;t Matter"/>
+<meta name="twitter:description" content="Or, why I like Rust
+There&rsquo;s a lot of talk these days about how important concurrency is. The reasons are obvious: in a world of computing at scale, single processors don&rsquo;t. Many people decry the death of Moore&rsquo;s law, and increasingly they seem to be right. Transistors can only get so small, after all. As a result, the constantly increasing desire for computer performance will have to come from concurrency, working around the issue of Moore&rsquo;s law entirely."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://jrasky.github.io/css/main.css" /><script src="http://jrasky.github.io/js/feather.min.js"></script><script src="http://jrasky.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Jerome Rasky</h1>
+	<div class="site-description"><h2>Software Engineer</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/jrasky" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/resume.pdf">Resume</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Why Concurrency doesn&#39;t Matter</h1>
+			<div class="meta">Posted at &mdash; Aug 21, 2015</div>
+		</div>
+
+		<div class="markdown">
+			<p>Or, why I like Rust</p>
+
+<p>There&rsquo;s a lot of talk these days about how important concurrency is. The reasons
+are obvious: in a world of computing at scale, single processors don&rsquo;t. Many
+people decry the death of Moore&rsquo;s law, and increasingly they seem to be right.
+Transistors can only get so small, after all. As a result, the constantly
+increasing desire for computer performance will have to come from concurrency,
+working around the issue of Moore&rsquo;s law entirely. All of this is sound reasoning.</p>
+
+<p>Most older languages were designed in a world where Moore&rsquo;s law was still very
+valid, and where compute performance came from single processors, not farms of
+them. Concurrency and scale networks existed, but were largely restricted to
+scientific computing or very special edge-cases, and the technologies that came
+out of them were not generally useful. Those days were great. However, that
+world doesn&rsquo;t exist anymore, and instead the lessons being drawn from the
+current flock of &ldquo;giants&rdquo; is the importance of scale. The future is now, and it
+looks like networks.</p>
+
+<p>As a result, these older languages did not serve the concurrency story very
+well. Though concurrency primitives existed in those languages, they usually
+require careful thought and planning for effective use. Data races abound,
+memory corruption is easy. In general, it&rsquo;s not the most inviting environment.
+In reaction to this, certain modern languages tout &ldquo;concurrency support&rdquo; as a
+major feature. The goal: to be rid of the pitfalls of traditional concurrency,
+and instead present a sane, easy-to-use interface that falls neatly in with all
+the other traditional paradigms of programming everybody is used to. Truly a
+noble cause.</p>
+
+<p>The problem lies here: concurrency is an anti-pattern to the traditional
+programming paradigms. Computing takes a certain level of discipline, especially
+with non-managed languages. Concurrency makes everything much harder, requiring
+either a much higher degree of discipline or a much higher degree of management.
+The latter group includes languages like Haskell, which are generally much more
+declarative. What you lose in terms of control over your code, however, you gain
+in performance. Suddenly, all the traditional problems with concurrency go away,
+and you&rsquo;re left with something concurrent and safe. This is awesome, except that
+you lose many of the traditional paradigms most programmers are used to. It&rsquo;s
+great for a wide variety of problems that benefit greatly from concurrency, but
+it&rsquo;s also hard to get used to, and not great for an equally large number of
+corner cases in more traditional programming where a certain level of
+concurrency plays positively to the application. Not only this, but learning
+this style requires a lot of domain-specific work and knowledge. This doesn&rsquo;t
+sound like the best solution.</p>
+
+<p>What certain modern languages offer does sound like a great solution: sane
+concurrency without any of the micro-management baggage. It&rsquo;s a great promise,
+but one that&rsquo;s ultimately contradictory. These modern languages do provide great
+front-ends to the concurrency primitives everybody loves to hate. If your
+greatest worry is about correctly creating or scheduling threads, or scaling to
+tens of thousands of threads, or about correctly cleaning up a thread&rsquo;s
+resources when it finishes, then these new languages offer exactly what you&rsquo;re
+after.</p>
+
+<p>That&rsquo;s not really the&ndash;or, at least, my&ndash;greatest concern with threads.
+Obviously, resource management and scale are an issue, but those are whenever
+I&rsquo;m doing any programming. They&rsquo;re amplified by threads, but they aren&rsquo;t
+fundamentally <em>new</em> worries. The new worries I do have relate to data races.
+Threading means giving up a huge amount of control over how your code executes,
+which means any interactions different parts of your code have are now much less
+predictable. The easy way to get out of this trap is to prevent all
+interactions, but that precludes any real benefits that concurrency provides. If
+all concurrent tasks are completely independent, then they cannot service the
+same problem.</p>
+
+<p>Using concurrency to work on a single problem requires sharing certain
+resources, even if those resources are simply messages. That shared state means
+data races are possible. Data races are an entirely different class of worries
+from what&rsquo;s possible in traditional, single-threaded programming. These concerns
+are serviced by the micro-management model, but not by the sexy-interface model
+employed by certain modern languages. As a result, these new languages do not
+really solve any underlying problems, but instead lather on a fresh layer of
+paint. On a small scale, everything feels awesome. On a larger scale, all the
+same problems come back.</p>
+
+<p>This is why concurrency doesn&rsquo;t matter. It doesn&rsquo;t because the real problems
+concurrency causes aren&rsquo;t addressed by modern languages. Certain other, more
+declarative languages address them to a certain degree, but are &ldquo;weird&rdquo; enough
+to not be generally useful. Or, if they are, they haven&rsquo;t seen very much
+adoption.</p>
+
+<p>What about the resource management and scaling category of problems, however?
+Although they are fairly general, they are definitely amplified by concurrency.
+The traditional answer to resource management has been garbage collection, which
+is a good solution, but doesn&rsquo;t <em>always</em> scale very well. Not only this, but
+resource management incurs a performance penalty, caused by the garbage
+collection itself and by the extra work required when acquiring or releasing
+resources. Much like the micro-management model for concurrency, this doesn&rsquo;t
+seem like the best solution.</p>
+
+<p>This is where Rust comes in. Rust&rsquo;s major innovation is the borrow checker, an
+additional bit of information the compiler tracks which enables it to determine
+when data comes into and falls out of scope. This means the compiler can
+identify in a deterministic fashion when to free resources, meaning it can
+insert this information into the binary it produces. No more need for separate
+garbage collection, instead resources are freed at the ends of certain lexical
+scopes. This can obviously hurt performance&ndash;especially when code is written
+such that large amounts of data are copied and freed&ndash;but this is always the
+case when the language does not micro-manage your code.</p>
+
+<p>What isn&rsquo;t always the case is the level of control that a borrow checker gives
+you. Even if the worst case isn&rsquo;t very different from a garbage collector, the
+average case is much better. All the resources your program uses are right
+there, instead of being hidden away behind a garbage collector. Plus, the
+behavior is defined by the lexical scope of your code, and not by some black-box
+mechanics taking place behind the scenes of the garbage collector.</p>
+
+<p>All of this makes for a mechanic that I think will survive Rust as a language.
+The borrow checker is something extremely useful in general programming, not
+only because it manages resources with no overhead, but because it also prevents
+many classes of memory corruption issues and data races often present in other
+languages. Much like type checking before it, I think borrow checking will
+become part of future languages and we&rsquo;ll all wonder how we ever dealt with
+programming without it.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = '';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
