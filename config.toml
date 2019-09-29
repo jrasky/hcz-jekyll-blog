@@ -8,6 +8,8 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+disqusShortname = "jrasky"
+
 [params]
     subtitle = "Software Engineer"
     mainSections = ["posts"]
