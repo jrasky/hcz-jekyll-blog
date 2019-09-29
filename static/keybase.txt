@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/jrasky
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.rasky.co
+  * I am jrasky (https://keybase.io/jrasky) on keybase.
+  * I have a public key with fingerprint C341 FAD0 9F5D E883 42D3  DEED B0D3 DC7F 1CE0 19DF
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "012094ad4ebaa72b96f1427d2b9db89ddada61958114a6235daa6c7d374c4eaeff7d0a",
+            "fingerprint": "c341fad09f5de88342d3deedb0d3dc7f1ce019df",
+            "host": "keybase.io",
+            "key_id": "b0d3dc7f1ce019df",
+            "kid": "0101ee94b01bb62bde6633ebe2375d8ab08bde312e37d7709f806ff9f7cd4f519eb10a",
+            "uid": "3ba51d5c706d8f7ed8525f250a86b619",
+            "username": "jrasky"
+        },
+        "service": {
+            "hostname": "www.rasky.co",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1468691756,
+    "expire_in": 157680000,
+    "prev": "e89ef3b0db98fbfadf1e40ff69f377be244ae5552206b3b9ed52459f12c98808",
+    "seqno": 15,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMNvAnicbVJtUFRVGF4+loYtCoQRCnLsjtBoG9zvDxgwpxV0hKmmCCua7Z57zoXr
+wu6yHxDRxjRIKqR8KbWJBBGimAxMDiiURdnsZDOIoAhFA1TDIBogCsI4Snd39F/n
+z3vO+z7Pc573PedCSIBG59c5PF4aM/n0hN9v/fVOTVaFU1+CAQssxhJLMBPyBZQH
+kd1hNCkQS8RwgsQFWoQ0AqLIkUBgZYImOajuIOAFCEUosoTA8ARBiyxJMVAUWYmD
+FEdLNBKRLHMQFzE9JivmHGSz2hSzQ5WVKJqQRYgLMgMRz1M0CSmIEAS4GiVOJiSE
+EwKUVWKuxe5lqOaAaEfxikXNqQejz97/4B/5xgmEBBrgBAAsCSBiWYpCAJEUx0Be
+BDiv5iiCRBQHOU41wuOsLAsyJ0FaZggBAcLn2+mTo4DIEJCROJyFvMwhyDMkI5MM
+LvIsUPv3Au3IZhbzkYreYxPtpmLMpcfUXKEiIe9YvX08rBcVFcX7IPGStxurzeKw
+SJY8tZLrcFjtiV6mo9jqgyJgfChiBIoZqlNUGYXIZlcsZiyRUJGSQ/GqEjTLswLB
+MaweQ+9bFRsyKl4Ew7E8ri7vPahQlUS8gGRKnRwQeBmoryATiMZlmRVkiuPUCdG0
+iBiGIUmcBRQQEGRImhFkgpQEnsd5zNtWgdni1VZ9ijmqpl3JMYsOpw1hrp/6swM1
+fjpNkNbf+700uuDQR59uvztUU5ueOR2xdqQtSNc898BZFh7SsoFaaQq7c2xx/YJu
+R+Tu00kHThy+da6xbGNkqVRY3tXzSdTl6qrz/zRdoi6uXakeNL34fUTf6XUti57u
+mI2NmS7/AvdqTGR06RQx1v3mwjb/mvY6w/rqcu3fsda7DomdmOnbI3SGjx4JZQIb
+hLeGW3s6zN8csuRbwpNTGwfePvnn4sB7zOWrV5c+mM+Lq5xTXv3U8OPID5/d8Dwf
+WzJ+8G6xOxnmJd9uMw6t3tscSe48BXovtZ/x1OxfOfzKh7ebqsCm+tmu0FhtRJo1
+6tpUY1RhwlquJc5/FmxnvpLX/SVVZSWVtZnqblwpqx7/3D5RNcZPPfexaUvJR6ll
+F4NSGr4OuC5NvDHTFdpxvCM7ujb5Cf3QQXdD+U3D1pntw9HbDN0pFa/t689o7wz+
++cKOd/pufXci5ejehGnpQX/1sXPLY44zae6dN2tcR7X6yd44/67aWO3gcMFIRWaP
+c8NIQvC+Uoab2/py1lLr6y0J6WId6VpOH816oaty3nPfuZrhLA949vGgsFbX2ZGT
+2c2mhame5V2Dj/l/a8h66dfOWdteo0u3+cv2+0+d+iUjTTE8k9t9Z9KcGN18zTYa
+2jqqqR86dHZlV+ZSb9H44ND5syXiF+XA3Z3aPO/5I2HTFu29/MDfB+I8Y3RNdNCB
+kKR/j0+HwScrr7+7+z8wFMvM
+=AUzJ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jrasky
+
+==================================================================

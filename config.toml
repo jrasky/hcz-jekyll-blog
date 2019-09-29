@@ -1,0 +1,40 @@
+baseURL = "http://jrasky.github.io/"
+languageCode = "en-us"
+title = "Jerome Rasky"
+theme = "ezhil"
+
+# Enable syntax highlighting.
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[params]
+    subtitle = "Software Engineer"
+    mainSections = ["posts"]
+    disableDisqusTypes = ["page"]
+    featureIconsCDN = true
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.main]]
+name = "Resume"
+url = "/resume.pdf"
+weight = 3
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/jrasky"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
