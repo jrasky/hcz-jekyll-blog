@@ -1,4 +1,4 @@
-baseURL = "http://jrasky.github.io/"
+baseURL = "https://jrasky.github.io/"
 languageCode = "en-us"
 title = "Jerome Rasky"
 theme = "ezhil"
